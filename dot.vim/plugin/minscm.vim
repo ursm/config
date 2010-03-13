@@ -1,0 +1,1 @@
+../stow/vim-hgutils/plugin/minscm.vim

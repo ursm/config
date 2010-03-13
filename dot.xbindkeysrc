@@ -1,0 +1,8 @@
+"xrandr --output LVDS1 --auto --output VGA1 --auto"
+  XF86Launch1
+
+"xrandr --output LVDS1 --auto --left-of VGA1 --output VGA1 --auto"
+  XF86Launch2
+
+"xscreensaver-command -lock"
+  XF86Launch4

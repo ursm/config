@@ -1,0 +1,9 @@
+autodetach on
+escape ^Tt
+backtick 0 0 0 uim-fep-tick
+hardstatus alwayslastline "%0`%-w%{=b bw}%n %t%{-}%+w"
+defscrollback 5000
+msgwait 1
+startup_message off
+vbell off
+defbce on

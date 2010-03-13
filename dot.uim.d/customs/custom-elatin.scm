@@ -1,0 +1,8 @@
+(define elatin-rules 'elatin-rules-latin-prefix)
+(define elatin-esc-turns-off? #f)
+(define elatin-on-key '("<Control>\\"))
+(define elatin-on-key? (make-key-predicate '("<Control>\\")))
+(define elatin-off-key '("<Control>\\"))
+(define elatin-off-key? (make-key-predicate '("<Control>\\")))
+(define elatin-backspace-key '(generic-backspace-key))
+(define elatin-backspace-key? (make-key-predicate '(generic-backspace-key?)))

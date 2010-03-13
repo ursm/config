@@ -1,0 +1,51 @@
+[ui]
+username = Keita Urashima <ursm@ursm.jp>
+editor = vim '+set filetype=hg-commit'
+
+[extensions]
+bookmarks =
+children =
+churn =
+color =
+convert =
+extdiff =
+fetch =
+graphlog =
+keyword =
+mq =
+pager =
+parentrevspec =
+purge =
+rebase =
+record =
+share =
+transplant =
+zeroconf =
+
+# diffstat =
+hg-git =
+hgattic =
+# hgsubversion =
+qup =
+
+[defaults]
+backout = --merge
+glog = --style compact
+
+[alias]
+br = branch
+bs = branches
+pu = pull --update
+pr = pull --rebase
+ra = revert --all
+plog = log --verbose --patch --no-merges
+qstatus = status --rev -2:.
+
+[pager]
+attend = log, glog, diff, qdiff, export, plog, outgoing, incoming
+
+[diff]
+git = True
+
+[extdiff]
+cmd.vimdiff = vimdiff

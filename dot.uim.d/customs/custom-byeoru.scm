@@ -1,0 +1,8 @@
+(define byeoru-layout 'byeoru-layout-hangul2)
+(define byeoru-jamo-orderedness 'ordered)
+(define byeoru-esc-turns-off? #t)
+(define byeoru-commit-by-word? #f)
+(define byeoru-shifted-romaja-isolates-vowel? #f)
+(define byeoru-nr-candidate-max 10)
+(define byeoru-symbol-cache-size 5)
+(define byeoru-compatibility-jamos-for-incomplete-syllables? #t)

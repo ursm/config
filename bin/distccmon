@@ -1,0 +1,3 @@
+#!/bin/sh
+
+DISTCC_DIR=/var/tmp/portage/.distcc distccmon-gui

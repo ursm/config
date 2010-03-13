@@ -1,0 +1,1 @@
+../stow/vim-hgutils/syntax/minscm-commit.vim

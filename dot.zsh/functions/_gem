@@ -1,0 +1,5 @@
+#compdef _gem gem
+
+_gem () {
+  `gem help commands | grep '^  *' | sed 's/^ *//' | sed 's/  *.*//' | sed 's/^/compadd /'`
+}

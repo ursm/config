@@ -1,0 +1,5 @@
+#compdef _cap cap
+
+_cap () {
+  compadd `cap -T | grep '^cap ' | sed 's/^cap //' | sed 's/ .*//' | xargs`
+}

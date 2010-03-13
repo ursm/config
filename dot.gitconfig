@@ -1,0 +1,27 @@
+[alias]
+	br = branch
+	ca = commit -v --amend
+	ci = commit -v
+	co = checkout
+	ds = diff --staged
+	lg = log --graph
+	lp = log -p --stat
+	pr = pull --rebase
+	st = status
+	svd = svn dcommit
+	svf = svn fetch
+	svr = svn rebase
+	serve = daemon --export-all --base-path=. --base-path-relaxed
+	in  = !sh -c 'git log ..origin/${1:-master}'
+	out = !sh -c 'git log origin/${1:-master}..' -
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[user]
+	name = Keita Urashima
+	email = ursm@ursm.jp
+[github]
+	user = ursm
+[core]
+	excludesfile = /home/ursm/.gitignore

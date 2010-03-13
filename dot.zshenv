@@ -1,0 +1,5 @@
+export ZDOTDIR=$HOME/.zsh
+export LANG=ja_JP.UTF-8
+export VTE_CJK_WIDTH=1
+export HGENCODING=utf-8
+export __CF_USER_TEXT_ENCODING=0x1F5:0x08000100:0

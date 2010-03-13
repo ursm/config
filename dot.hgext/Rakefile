@@ -1,0 +1,17 @@
+task :default => :update
+
+task :update do
+  %w(
+    http://bitbucket.org/Bill_Barry/hgattic/
+    http://bitbucket.org/durin42/hgsubversion/
+    http://bitbucket.org/Scotty/hg-git/
+  ).each do |u|
+    dir = u.split('/').last
+
+    if File.exist?(dir)
+      sh "hg pull -u -R #{dir}"
+    else
+      sh "hg clone #{u}"
+    end
+  end
+end

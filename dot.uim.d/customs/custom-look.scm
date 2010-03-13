@@ -1,0 +1,6 @@
+(define look-dict "/usr/share/dict/words")
+(define look-personal-dict-filename "/home/ursm/.look-uim-dict")
+(define look-beginning-character-length 1)
+(define look-prepared-words 0)
+(define look-fence-left "{")
+(define look-fence-right "}")
