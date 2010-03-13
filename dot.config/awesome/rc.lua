@@ -5,14 +5,16 @@ require("awful.rules")
 -- Theme handling library
 require("beautiful")
 -- Notification library
-require("naughty")
+--require("naughty")
+
+require("vicious")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "urxvtc"
+terminal = "sakura"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -69,9 +71,6 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- }}}
 
 -- {{{ Wibox
--- Create a textclock widget
-mytextclock = awful.widget.textclock({ align = "right" }, " %a %b %d, %H:%M:%S ", 1)
-
 -- Create a systray
 mysystray = widget({ type = "systray" })
 
@@ -135,6 +134,25 @@ for s = 1, screen.count() do
 
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
+
+    cpuwidget = widget({ type = "textbox" })
+    vicious.register(cpuwidget, vicious.widgets.cpu, " CPU:$1%", 3)
+
+    memwidget = widget({ type = "textbox" })
+    vicious.register(memwidget, vicious.widgets.mem, " Mem:$1%", 13)
+
+    batwidget = widget({ type = "textbox" })
+    vicious.register(batwidget, vicious.widgets.bat, " Bat:$2%", 61, "BAT0")
+
+    volwidget = widget({ type = "textbox" })
+    vicious.register(volwidget, vicious.widgets.volume, " $2$1", 11, "Master")
+
+    wifiwidget = widget({ type = "textbox" })
+    vicious.register(wifiwidget, vicious.widgets.wifi, " ${ssid} ${mode} ", 17, "wlan0")
+
+    datewidget = widget({ type = "textbox" })
+    vicious.register(datewidget, vicious.widgets.date, " %a %b %d, %H:%M:%S ", 1)
+
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
         {
@@ -144,8 +162,13 @@ for s = 1, screen.count() do
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
-        mytextclock,
+        datewidget,
         s == 1 and mysystray or nil,
+        wifiwidget,
+        volwidget,
+        batwidget,
+        memwidget,
+        cpuwidget,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
