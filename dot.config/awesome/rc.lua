@@ -229,6 +229,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
+    -- Miscellaneous program, Mod1 is Alt
+    awful.key({ modkey, "Mod1" },    "l",     function () awful.util.spawn("xscreensaver-command -lock") end),
+
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
