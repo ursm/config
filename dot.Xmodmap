@@ -1,6 +1,7 @@
 remove Lock = Caps_Lock
 add Control = Caps_Lock
 keysym Caps_Lock = Control_L
+keysym Menu = Super_R
 keysym Muhenkan = Super_L
 keysym Henkan_Mode = Super_R
 keysym Hiragana_Katakana = Alt_R
