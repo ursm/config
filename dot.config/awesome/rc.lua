@@ -231,6 +231,10 @@ globalkeys = awful.util.table.join(
 
     -- Miscellaneous program, Mod1 is Alt
     awful.key({ modkey, "Mod1" },    "l",     function () awful.util.spawn("xscreensaver-command -lock") end),
+    awful.key({ modkey, "Mod1" },    "1",     function () awful.util.spawn("xrandr --output LVDS1 --auto --output VGA1 --off") end),
+    awful.key({ modkey, "Mod1" },    "2",     function () awful.util.spawn("xrandr --output LVDS1 --off --output VGA1 --auto") end),
+    awful.key({ modkey, "Mod1" },    "m",     function () awful.util.spawn("xrandr --output LVDS1 --auto --same-as VGA1 --output VGA1 --auto") end),
+    awful.key({ modkey, "Mod1" },    "d",     function () awful.util.spawn("xrandr --output LVDS1 --auto --left-of VGA1 --output VGA1 --auto") end),
 
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
