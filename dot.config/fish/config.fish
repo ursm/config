@@ -18,4 +18,4 @@ end
 
 cdd_init
 
-#alias b bzr
+alias g git
