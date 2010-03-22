@@ -105,6 +105,7 @@ autocmd User Rails* set tabstop=3 shiftwidth=3 noexpandtab
 let g:Align_xstrlen = 3
 let g:netrw_altv = 1
 let g:vimwiki_home = '~/vimwiki/'
+let g:rsenseUseOmniFunc = 1
 
 " FuzzyFinder
 let g:fuf_modesDisable = []
