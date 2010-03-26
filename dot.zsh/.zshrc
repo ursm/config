@@ -24,6 +24,7 @@ alias reload='source $ZDOTDIR/.zshrc'
 alias mq='hg -R .hg/patches'
 alias ql="qlmanage -p $@ >& /dev/null"
 alias pmerge="sudo pump emerge -av"
+alias be="bundle exec"
 
 alias -g L="| $PAGER"
 alias -g S='`xclip -o`'
