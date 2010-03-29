@@ -1,11 +1,1 @@
---- 
 gem: --user-install --no-rdoc --no-ri --verbose
-:benchmark: false
-install: --env-shebang
-:verbose: true
-:backtrace: false
-:update_sources: true
-:sources: 
-- http://rubygems.org
-update: --env-shebang
-:bulk_threshold: 1000
