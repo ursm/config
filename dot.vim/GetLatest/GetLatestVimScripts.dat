@@ -6,15 +6,15 @@ ScriptID	SourceID	Filename
 2386 9299  :AutoInstall: endwise.vim
 1861 8877  :AutoInstall: errormarker.vim
 2098 11739 :AutoInstall: fakeclip.zip
-2423 12283 :AutoInstall: gist.vim
+2423 12732 :AutoInstall: gist.vim
 39   8196  :AutoInstall: matchit.zip
 2262 8944  :AutoInstall: occur.vim
-1567 11920 :AutoInstall: rails.vim
+1567 12622 :AutoInstall: rails.vim
 1928 7262  :AutoInstall: Rename.vim
 1721 12345 :AutoInstall: renamer.vim
 2120 12533 :AutoInstall: speeddating.vim
 729  3477  :AutoInstall: sudo.vim
-1697 8283  :AutoInstall: surround.vim
+1697 12566 :AutoInstall: surround.vim
 2305 9427  :AutoInstall: textile.zip
 2101 8857  :AutoInstall: textobj-datetime.zip
 2415 9392  :AutoInstall: textobj-diff.zip
@@ -30,3 +30,4 @@ ScriptID	SourceID	Filename
 2673 10805 :AutoInstall: smarttill.zip
 1879 11894 :AutoInstall: AutoComplPop
 1984 11852 :AutoInstall: FuzzyFinder
+1896 12338 :AutoInstall: ragtag.vim
