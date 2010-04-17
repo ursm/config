@@ -25,6 +25,7 @@ alias mq='hg -R .hg/patches'
 alias ql="qlmanage -p $@ >& /dev/null"
 alias pmerge="sudo pump emerge -av"
 alias be="bundle exec"
+alias bo="bundle open"
 
 alias -g L="| $PAGER"
 alias -g S='`xclip -o`'
