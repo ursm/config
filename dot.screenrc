@@ -7,3 +7,4 @@ msgwait 1
 startup_message off
 vbell off
 defbce on
+termcapinfo linux ti@:te@
