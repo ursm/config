@@ -100,8 +100,6 @@ autocmd InsertLeave * highlight StatusLine ctermfg=white
 autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
 autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
-autocmd User Rails* set tabstop=3 shiftwidth=3 noexpandtab
-
 let g:Align_xstrlen = 3
 let g:netrw_altv = 1
 let g:vimwiki_home = '~/vimwiki/'
@@ -122,3 +120,5 @@ nnoremap ,fb :FufBookmark<CR>
 nnoremap ,fa :FufAddBookmark<CR>
 nnoremap ,ft :FufTag<CR>
 nnoremap ,fg :FufTaggedFile<CR>
+
+call pathogen#runtime_append_all_bundles() 
