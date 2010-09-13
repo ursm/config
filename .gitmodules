@@ -55,3 +55,18 @@
 [submodule "dot.vim/bundle/neocomplcache"]
 	path = dot.vim/bundle/neocomplcache
 	url = git://github.com/Shougo/neocomplcache.git
+[submodule "dot.vim/bundle/vim-autocomplpop"]
+	path = dot.vim/bundle/vim-autocomplpop
+	url = git://github.com/vim-scripts/AutoComplPop.git
+[submodule "dot.vim/bundle/vim-fuzzyfinder"]
+	path = dot.vim/bundle/vim-fuzzyfinder
+	url = git://github.com/vim-scripts/FuzzyFinder.git
+[submodule "dot.vim/bundle/rename"]
+	path = dot.vim/bundle/rename
+	url = git://github.com/vim-scripts/Rename.git
+[submodule "dot.vim/bundle/zoomwin"]
+	path = dot.vim/bundle/zoomwin
+	url = git://github.com/vim-scripts/ZoomWin.git
+[submodule "dot.vim/bundle/vimwiki"]
+	path = dot.vim/bundle/vimwiki
+	url = git://github.com/vim-scripts/vimwiki.git
