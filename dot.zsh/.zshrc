@@ -7,7 +7,6 @@ export HGENCODING=utf-8
 export LANG=en_US.UTF-8
 export LS_COLORS='di=01;34:ln=32:ex=35'
 export LV="-lc -Ou8"
-export PAGER='lv'
 export PYTHONPATH=$HOME/.hgext:$PYTHONPATH
 export PYTHONSTARTUP=$HOME/.pythonrc
 
