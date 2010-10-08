@@ -1,4 +1,7 @@
+filetype off
+call pathogen#runtime_append_all_bundles() 
 filetype indent plugin on
+
 syntax enable
 
 set encoding=utf-8
@@ -35,6 +38,7 @@ set ttimeoutlen=0
 set virtualedit=block
 set visualbell t_vb=
 set wildmode=list:longest,list:full
+set expandtab tabstop=2 shiftwidth=2
 
 if $SHELL =~ '/fish$'
   set shell=zsh
@@ -120,5 +124,3 @@ nnoremap ,fb :FufBookmark<CR>
 nnoremap ,fa :FufAddBookmark<CR>
 nnoremap ,ft :FufTag<CR>
 nnoremap ,fg :FufTaggedFile<CR>
-
-call pathogen#runtime_append_all_bundles() 
