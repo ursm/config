@@ -15,15 +15,13 @@
 	in  = !sh -c 'git log ..origin/${1:-master}'
 	out = !sh -c 'git log origin/${1:-master}..' -
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+	ui = auto
 [user]
 	name = Keita Urashima
 	email = ursm@ursm.jp
 [github]
 	user = ursm
 [core]
-	excludesfile = /home/ursm/.gitignore
+	excludesfile = ~/.gitignore
 [push]
 	default = tracking
