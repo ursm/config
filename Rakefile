@@ -3,7 +3,7 @@ require 'pathname'
 HOME = Pathname.new(ENV['HOME'])
 
 def ln_snf(source, *dest)
-	sh 'ln', '-snf', source, *dest
+	sh 'ln', '-snf', source.to_s, *dest.map(&:to_s)
 end
 
 task :default => :all
