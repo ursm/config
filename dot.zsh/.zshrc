@@ -117,3 +117,5 @@ setopt no_flow_control
 setopt nolistbeep
 setopt pushd_ignore_dups
 setopt zle
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

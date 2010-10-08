@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:$HOME/.gem/ruby/1.8/bin:$HOME/.npm/bin:$PATH:/usr/local/sbin:/usr/sbin:/sbin
+export PATH=$HOME/bin:$HOME/.npm/bin:$PATH:/usr/local/sbin:/usr/sbin:/sbin
 export MANPATH=$HOME/.npm/man:$MANPATH
 export NODE_PATH=$HOME/.npm/libraries:$NODE_PATH
 
