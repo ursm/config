@@ -1,0 +1,31 @@
+#!/bin/bash
+
+if [ -z "$*" ]; then
+  echo "Usage: $0 EIX_ARGS"
+  echo "e.g. $0 dev-lang/ruby"
+  echo "     $0 -e ruby"
+  exit 1
+fi
+
+function open_ebuild() {
+  # TODO support overlay
+  cd /usr/portage/$1
+  ${EDITOR:-nano} $(ls *.ebuild | tail -n1)
+}
+
+pkgs=($(eix --only-names $*))
+
+case ${#pkgs[@]} in
+  0)
+    echo 'No matches found.'
+    ;;
+  1)
+    open_ebuild $pkgs
+    ;;
+  *)
+    select pkg in ${pkgs[@]}; do
+      open_ebuild $pkg
+      break
+    done
+    ;;
+esac
