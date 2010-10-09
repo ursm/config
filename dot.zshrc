@@ -79,7 +79,7 @@ setopt hist_ignore_space
 setopt share_history
 setopt extended_history
 
-HISTFILE=$ZDOTDIR/.zhistory
+HISTFILE=$HOME/.zhistory
 HISTSIZE=100000
 SAVEHIST=100000
 
