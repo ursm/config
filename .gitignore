@@ -1,4 +1,5 @@
-dot.vim/GetLatest/Installed/*
-dot.zsh/.zcompdump
-dot.zsh/.zhistory
-dot.zsh/cdd_pwd_list*
+*
+^dot.vim/*
+^dot.zsh/*
+^dot.config/awesome/*
+^dot.uim.d/*

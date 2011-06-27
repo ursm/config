@@ -7,4 +7,6 @@ msgwait 1
 startup_message off
 vbell off
 defbce on
-termcapinfo linux ti@:te@
+attrcolor b ".I"
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm:ti@:te@'
+shell -${SHELL}

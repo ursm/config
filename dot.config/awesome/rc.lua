@@ -14,7 +14,7 @@ require("vicious")
 beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "sakura"
+terminal = "gnome-terminal"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -90,11 +90,17 @@ mytaglist.buttons = awful.util.table.join(
 mytasklist = {}
 mytasklist.buttons = awful.util.table.join(
                      awful.button({ }, 1, function (c)
-                                              if not c:isvisible() then
-                                                  awful.tag.viewonly(c:tags()[1])
+                                              if c == client.focus then
+                                                  c.minimized = true
+                                              else
+                                                  if not c:isvisible() then
+                                                      awful.tag.viewonly(c:tags()[1])
+                                                  end
+                                                  -- This will also un-minimize
+                                                  -- the client, if needed
+                                                  client.focus = c
+                                                  c:raise()
                                               end
-                                              client.focus = c
-                                              c:raise()
                                           end),
                      awful.button({ }, 3, function ()
                                               if instance then
@@ -230,12 +236,14 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     -- Miscellaneous program, Mod1 is Alt
-    awful.key({ modkey, "Mod1" },    "l",     function () awful.util.spawn("xscreensaver-command -lock") end),
-    awful.key({ modkey, "Mod1" },    ";",     function () awful.util.spawn("dbus-send --system --print-reply --dest=org.freedesktop.Hal /org/freedesktop/Hal/devices/computer org.freedesktop.Hal.Device.SystemPowerManagement.SuspendHybrid int32:0") end),
-    awful.key({ modkey, "Mod1" },    "1",     function () awful.util.spawn("xrandr --output LVDS1 --auto --output VGA1 --off") end),
-    awful.key({ modkey, "Mod1" },    "2",     function () awful.util.spawn("xrandr --output LVDS1 --off --output VGA1 --auto") end),
+    awful.key({ modkey, "Mod1" },    "l",     function () awful.util.spawn("gnome-screensaver-command --lock") end),
+    awful.key({ modkey, "Mod1" },    ";",     function () awful.util.spawn("sudo -n pm-suspend-hybrid") end),
+    awful.key({ modkey, "Mod1" },    "1",     function () awful.util.spawn("xrandr --output LVDS1 --auto --output VGA1 --off  --output HDMI1 --off") end),
+    awful.key({ modkey, "Mod1" },    "2",     function () awful.util.spawn("xrandr --output LVDS1 --off  --output VGA1 --auto --output HDMI1 --off") end),
+    awful.key({ modkey, "Mod1" },    "3",     function () awful.util.spawn("xrandr --output LVDS1 --off  --output VGA1 --off  --output HDMI1 --auto") end),
     awful.key({ modkey, "Mod1" },    "m",     function () awful.util.spawn("xrandr --output LVDS1 --auto --same-as VGA1 --output VGA1 --auto") end),
     awful.key({ modkey, "Mod1" },    "d",     function () awful.util.spawn("xrandr --output LVDS1 --auto --left-of VGA1 --output VGA1 --auto") end),
+    awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
@@ -257,7 +265,12 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
     awful.key({ modkey, "Shift"   }, "r",      function (c) c:redraw()                       end),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
-    awful.key({ modkey,           }, "n",      function (c) c.minimized = not c.minimized    end),
+    awful.key({ modkey,           }, "n",
+        function (c)
+            -- The client currently has the input focus, so it cannot be
+            -- minimized, since minimized clients can't have the focus.
+            c.minimized = true
+        end),
     awful.key({ modkey,           }, "m",
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
@@ -364,3 +377,5 @@ end)
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+awful.util.spawn_with_shell "dex -a"

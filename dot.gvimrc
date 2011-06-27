@@ -1,15 +1,17 @@
-colorscheme bensday
+colorscheme rubyblue
 
 set guioptions-=aegimrLtT
+set guicursor=a:blinkon0
 set t_vb=
 
 highlight CursorLine guibg=gray20
 
+AcpDisable
+
 if has('gui_gtk')
-  set guifont=Bitstream\ Vera\ Sans\ Mono\ 8
+  set guifont=Monospace\ 10
 end
 
 if has('gui_macvim')
-  set imdisable
   set transparency=5
 end

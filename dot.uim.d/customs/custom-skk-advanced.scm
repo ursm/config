@@ -2,7 +2,7 @@
 (define skk-use-recursive-learning? #t)
 (define skk-use-numeric-conversion? #t)
 (define skk-auto-start-henkan? #t)
-(define skk-dcomp-activate? #f)
+(define skk-dcomp-activate? #t)
 (define skk-use-look? #f)
 (define skk-look-dict "/usr/share/dict/words")
 (define skk-show-annotation? #t)

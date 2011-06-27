@@ -23,8 +23,6 @@ transplant =
 zeroconf =
 
 # diffstat =
-hg-git =
-hgattic =
 # hgsubversion =
 qup =
 

@@ -8,3 +8,7 @@
 (define tutcode-return-key? (make-key-predicate '(generic-return-key?)))
 (define tutcode-vi-escape-key '("escape" "<Control>["))
 (define tutcode-vi-escape-key? (make-key-predicate '("escape" "<Control>[")))
+(define tutcode-register-candidate-key '("<IgnoreShift>|"))
+(define tutcode-register-candidate-key? (make-key-predicate '("<IgnoreShift>|")))
+(define tutcode-purge-candidate-key '("<IgnoreShift>!"))
+(define tutcode-purge-candidate-key? (make-key-predicate '("<IgnoreShift>!")))

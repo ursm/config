@@ -95,8 +95,3 @@
 (global-set-key "\M-y" 'browse-kill-ring)
 (setq browse-kill-ring-display-style 'one-line)
 (setq browse-kill-ring-highlight-current-entry t)
-
-(require 'psvn)
-
-					;(require 'cl)
-					;(require 'rails)

@@ -3,3 +3,4 @@
 (define generic-nr-candidate-max 10)
 (define generic-commit-candidate-by-numeral-key? #t)
 (define generic-show-candidate-implicitly? #t)
+(define generic-show-prediction-candidates? #t)

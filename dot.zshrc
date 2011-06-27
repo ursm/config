@@ -1,4 +1,4 @@
-export BROWSER=xdg-open
+export BROWSER=chromium
 export DE=xfce
 export EDITOR='vim'
 export GREP_COLOR='01;34'
@@ -9,6 +9,8 @@ export LS_COLORS='di=01;34:ln=32:ex=35'
 export LV="-lc -Ou8"
 export PYTHONPATH=$HOME/.hgext:$PYTHONPATH
 export PYTHONSTARTUP=$HOME/.pythonrc
+
+unset RUBYOPT
 
 alias v='vim'
 alias g="git"
@@ -48,6 +50,7 @@ setopt prompt_subst
 autoload colors; colors
 
 autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git svn hg
 zstyle ':vcs_info:*' formats '[%b]'
 zstyle ':vcs_info:*' actionformats '[%b] (%a)'
 
@@ -57,7 +60,7 @@ precmd () {
     [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 
-PROMPT=$'%{$fg[red]%}%n@%M %{$fg[cyan]%}%~ %1(v|%F{green}%1v%f|)\n%{$fg[yellow]%}%#%{$reset_color%} '
+PROMPT=$'%B%F{green}%n@%M%f %F{blue}%~%f%b%1(v| %F{green}%1v%f|)\n%B%F{blue}$%f%b '
 
 # completion
 fpath=($HOME/.zsh/functions $fpath)

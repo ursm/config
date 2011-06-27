@@ -1,11 +1,40 @@
+set nocompatible
 filetype off
-call pathogen#runtime_append_all_bundles() 
-filetype indent plugin on
+
+set runtimepath+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'AutoComplPop'
+Bundle 'EnhCommentify.vim'
+Bundle 'Rename'
+Bundle 'Tabular'
+Bundle 'calendar.vim'
+Bundle 'coffee.vim'
+Bundle 'endwise.vim'
+Bundle 'git-commit'
+Bundle 'gnupg'
+Bundle 'haml.zip'
+Bundle 'matchit.zip'
+Bundle 'project.tar.gz'
+Bundle 'ragtag.vim'
+Bundle 'ruby.vim'
+Bundle 'rails.vim'
+Bundle 'surround.vim'
+Bundle 'twilight256.vim'
+Bundle 'vimwiki'
+Bundle 'cucumber.zip'
+
+Bundle 'git://github.com/kenchan/rubyblue.git'
+
+filetype plugin indent on
 
 syntax enable
+colorscheme twilight256
 
 set encoding=utf-8
-set fileencodings=utf-8,cp932,eucjp,iso2022jp
+set fileencodings=utf-8,cp932,eucjp,iso2022jp,utf-16
 set fileformats=unix,dos,mac
 
 set ambiwidth=double
@@ -33,7 +62,8 @@ set showmode
 set smartcase
 set smartindent
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%=%l,%c%v%8p
-set tabstop=4 shiftwidth=4
+set expandtab tabstop=2 shiftwidth=2
+set t_Co=256
 set ttimeoutlen=0
 set virtualedit=block
 set visualbell t_vb=
@@ -46,13 +76,13 @@ endif
 
 noremap ; :
 noremap : ;
-noremap j gj
-noremap k gk
-noremap gj j
-noremap gk k
-noremap k gk
-noremap gj j
-noremap gk k
+noremap <silent> j gj
+noremap <silent> k gk
+noremap <silent> gj j
+noremap <silent> gk k
+noremap <silent> k gk
+noremap <silent> gj j
+noremap <silent> gk k
 
 nnoremap + <C-w>+
 nnoremap - <C-w>-
@@ -104,10 +134,14 @@ autocmd InsertLeave * highlight StatusLine ctermfg=white
 autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
 autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
+autocmd BufNewFile,BufRead *.coffee setlocal filetype=coffee
+
 let g:Align_xstrlen = 3
 let g:netrw_altv = 1
 let g:vimwiki_home = '~/vimwiki/'
 let g:rsenseUseOmniFunc = 1
+let g:neocomplcache_enable_at_startup = 1
+let g:eskk_large_dictionary = '/usr/share/skk/SKK-JISYO.L'
 
 " FuzzyFinder
 let g:fuf_modesDisable = []

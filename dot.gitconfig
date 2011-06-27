@@ -4,10 +4,10 @@
 	ci = commit -v
 	co = checkout
 	ds = diff --staged
-	lg = log --graph
+	lg = log --oneline --decorate --graph
 	lp = log -p --stat
-	pr = pull --rebase
-	st = status
+	pr = pull --rebase --prune
+	st = status -sb
 	svd = svn dcommit
 	svf = svn fetch
 	svr = svn rebase
@@ -25,3 +25,5 @@
 	excludesfile = ~/.gitignore
 [push]
 	default = tracking
+[branch "master"]
+	mergeoptions = --no-ff
