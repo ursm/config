@@ -121,4 +121,6 @@ setopt nolistbeep
 setopt pushd_ignore_dups
 setopt zle
 
+stty stop undef
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

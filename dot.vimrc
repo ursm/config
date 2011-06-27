@@ -18,8 +18,10 @@ Bundle 'project.tar.gz'
 Bundle 'twilight256.vim'
 Bundle 'vimwiki'
 
+Bundle 'duskhacker/sweet-rspec-vim'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'h1mesuke/vim-alignta'
+Bundle 'kana/vim-textobj-entire'
 Bundle 'kana/vim-textobj-indent'
 Bundle 'kana/vim-textobj-jabraces'
 Bundle 'kana/vim-textobj-user'
@@ -30,6 +32,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'scrooloose/syntastic'
 Bundle 'taq/vim-rspec'
+Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
@@ -37,8 +40,12 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'wincent/Command-T'
 
 filetype plugin indent on
 
@@ -92,28 +99,13 @@ noremap <silent> j gj
 noremap <silent> k gk
 noremap <silent> gj j
 noremap <silent> gk k
-noremap <silent> k gk
-noremap <silent> gj j
-noremap <silent> gk k
 
 nnoremap + <C-w>+
 nnoremap - <C-w>-
-nnoremap <M-h> <C-w>h
-nnoremap <M-j> <C-w>j
-nnoremap <M-k> <C-w>k
-nnoremap <M-l> <C-w>l
-nnoremap <M-p> :set paste<CR>
-nnoremap <M-n> :set number!<CR>
-nnoremap <M-m> :set hlsearch!<CR>
-nnoremap gc `[v`]
-
-inoremap <C-l> <Esc>
 
 cnoremap <C-a> <Home>
 cnoremap <C-x> <C-r>=expand('%:p:h')<CR>/
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
-
-onoremap gc :<C-u>normal gc<CR>
 
 highlight Pmenu ctermbg=LightGray ctermfg=Black guibg=LightGray guifg=Black
 highlight PmenuSel ctermbg=Blue guibg=RoyalBlue
@@ -146,27 +138,22 @@ autocmd InsertLeave * highlight StatusLine ctermfg=white
 autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
 autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
-autocmd BufNewFile,BufRead *.coffee setlocal filetype=coffee
-
-let g:Align_xstrlen = 3
 let g:netrw_altv = 1
 let g:vimwiki_home = '~/vimwiki/'
-let g:rsenseUseOmniFunc = 1
-let g:neocomplcache_enable_at_startup = 1
-let g:eskk_large_dictionary = '/usr/share/skk/SKK-JISYO.L'
+let g:CommandTMaxHeight = 20
 
 " FuzzyFinder
 let g:fuf_modesDisable = []
 let g:fuf_enumeratingLimit = 30
 let g:fuf_ignoreCase = 0
-let g:fuf_keyOpenSplit = '<C-m>'
+let g:fuf_keyOpenSplit = '<C-s>'
 
-nnoremap ,ff :FufBuffer<CR>
-nnoremap ,fi :FufFile<CR>
-nnoremap ,fd :FufDir<CR>
-nnoremap ,fm :FufMruFile<CR>
-nnoremap ,fc :FufMruCmd<CR>
-nnoremap ,fb :FufBookmark<CR>
-nnoremap ,fa :FufAddBookmark<CR>
-nnoremap ,ft :FufTag<CR>
-nnoremap ,fg :FufTaggedFile<CR>
+nnoremap <Esc>t :CommandT<CR>
+
+nnoremap <Space>ff :FufMruFile<CR>
+nnoremap <Space>fc :FufMruCmd<CR>
+nnoremap <Space>fh :FufHelp<CR>
+
+nnoremap <Space>ra :SweetVimRspecRunFile<CR>
+nnoremap <Space>rf :SweetVimRspecRunFocused<CR>
+nnoremap <Space>rr :SweetVimRspecRunPrevious<CR>
