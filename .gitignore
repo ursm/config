@@ -1,5 +1,5 @@
 *
-^dot.vim/*
-^dot.zsh/*
-^dot.config/awesome/*
-^dot.uim.d/*
+!dot.vim
+!dot.zsh
+!dot.config/awesome
+!dot.uim.d
