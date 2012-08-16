@@ -8,13 +8,8 @@ Bundle 'gmarik/vundle'
 
 Bundle 'AutoComplPop'
 Bundle 'EnhCommentify.vim'
-Bundle 'FuzzyFinder'
-Bundle 'L9'
 Bundle 'Rename'
-Bundle 'calendar.vim'
-Bundle 'gnupg'
 Bundle 'matchit.zip'
-Bundle 'project.tar.gz'
 Bundle 'twilight256.vim'
 Bundle 'vimwiki'
 
@@ -27,6 +22,7 @@ Bundle 'kana/vim-textobj-jabraces'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kenchan/rubyblue'
+Bundle 'kien/ctrlp.vim'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'pangloss/vim-javascript'
 Bundle 'plasticboy/vim-markdown'
@@ -46,7 +42,6 @@ Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'wincent/Command-T'
 
 filetype plugin indent on
 
@@ -143,18 +138,4 @@ let g:netrw_altv = 1
 let g:vimwiki_home = '~/vimwiki/'
 let g:CommandTMaxHeight = 20
 
-" FuzzyFinder
-let g:fuf_modesDisable = []
-let g:fuf_enumeratingLimit = 30
-let g:fuf_ignoreCase = 0
-let g:fuf_keyOpenSplit = '<C-s>'
-
-nnoremap <Esc>t :CommandT<CR>
-
-nnoremap <Space>ff :FufMruFile<CR>
-nnoremap <Space>fc :FufMruCmd<CR>
-nnoremap <Space>fh :FufHelp<CR>
-
-nnoremap <Space>ra :SweetVimRspecRunFile<CR>
-nnoremap <Space>rf :SweetVimRspecRunFocused<CR>
-nnoremap <Space>rr :SweetVimRspecRunPrevious<CR>
+let g:ctrlp_map = '<Esc>t'
