@@ -1,126 +1,37 @@
-export BROWSER=chromium
-export DE=xfce
-export EDITOR='vim'
-export GREP_COLOR='01;34'
-export GREP_OPTIONS='--color=auto'
-export HGENCODING=utf-8
-export LANG=en_US.UTF-8
-export LS_COLORS='di=01;34:ln=32:ex=35'
-export LV="-lc -Ou8"
-export PYTHONPATH=$HOME/.hgext:$PYTHONPATH
-export PYTHONSTARTUP=$HOME/.pythonrc
+# Path to your oh-my-zsh configuration.
+ZSH=$HOME/.oh-my-zsh
 
-unset RUBYOPT
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="gentoo"
 
-alias v='vim'
-alias g="git"
-alias b="bzr"
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias ls='ls -F --color=auto'
-alias ll='ls -lh'
-alias la='ll -a'
-alias tf='tail -f'
-alias psa='ps aux'
-alias reload='source $ZDOTDIR/.zshrc'
-alias mq='hg -R .hg/patches'
-alias ql="qlmanage -p $@ >& /dev/null"
-alias pmerge="sudo pump emerge -av"
-alias be="bundle exec"
-alias bo="bundle open"
+# Set to this to use case-sensitive completion
+# CASE_SENSITIVE="true"
 
-alias -g L="| $PAGER"
-alias -g S='`xclip -o`'
-alias -g P='`xclip -o -selection clipboard`'
-alias -g C='| xclip -selection clipboard'
+# Comment this out to disable weekly auto-update checks
+# DISABLE_AUTO_UPDATE="true"
 
-function psg() {
-  psa | head -n 1
-  psa | grep $* | grep -v "ps aux" | grep -v grep
-}
+# Uncomment following line if you want to disable colors in ls
+# DISABLE_LS_COLORS="true"
 
-function refe() { command refe $@ | iconv -f euc-jp -t utf-8 }
-function href() { command href $@ | iconv -f euc-jp -t utf-8 }
+# Uncomment following line if you want to disable autosetting terminal title.
+# DISABLE_AUTO_TITLE="true"
 
-bindkey -e
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+# COMPLETION_WAITING_DOTS="true"
 
-WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(autojump bundler cap git github gnu-utils heroku knife rails3 rake rbenv ruby screen thor vundle)
 
-# prompt
-setopt prompt_subst
-autoload colors; colors
+source $ZSH/oh-my-zsh.sh
 
-autoload -Uz vcs_info
-zstyle ':vcs_info:*' enable git svn hg
-zstyle ':vcs_info:*' formats '[%b]'
-zstyle ':vcs_info:*' actionformats '[%b] (%a)'
-
-precmd () {
-    psvar=()
-    vcs_info
-    [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-}
-
-PROMPT=$'%B%F{green}%n@%M%f %F{blue}%~%f%b%1(v| %F{green}%1v%f|)\n%B%F{blue}$%f%b '
-
-# completion
-fpath=($HOME/.zsh/functions $fpath)
-autoload -U compinit; compinit
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
-# cdd
-autoload cdd; cdd > /dev/null
-
-function chpwd() {
-  ls
-  _reg_pwd_screennum
-}
-
-# history
-setopt hist_ignore_all_dups
-setopt hist_ignore_space
-setopt share_history
-setopt extended_history
-
-HISTFILE=$HOME/.zhistory
-HISTSIZE=100000
-SAVEHIST=100000
-
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^p" history-beginning-search-backward-end
-bindkey "^n" history-beginning-search-forward-end
-
-# zmv
-autoload zmv
-alias zmv='noglob zmv -W'
-alias zcp='zmv -C'
-alias zln='zmv -L'
-
-# options
-setopt always_to_end
-setopt auto_cd
-setopt auto_list
-setopt auto_menu
-setopt auto_param_keys
-setopt auto_param_slash
-setopt auto_pushd
-setopt auto_remove_slash
-setopt complete_in_word
-setopt extended_glob
-setopt glob_complete
-setopt glob_dots
-setopt interactive_comments
-setopt list_types
-setopt long_list_jobs
-setopt magic_equal_subst
-setopt no_check_jobs
-setopt no_flow_control
-setopt nolistbeep
-setopt pushd_ignore_dups
-setopt zle
-
-stty stop undef
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+# Customize to your needs...
+export PATH=$HOME/bin:$HOME/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.6.2:/usr/local/sbin:/usr/sbin:/sbin
