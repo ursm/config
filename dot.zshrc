@@ -33,5 +33,4 @@ plugins=(autojump bundler cap git github gnu-utils heroku knife rails3 rake rben
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=$HOME/bin:$HOME/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/opt/bin:/usr/x86_64-pc-linux-gnu/gcc-bin/4.6.2:/usr/local/sbin:/usr/sbin:/sbin
+unsetopt correct_all
