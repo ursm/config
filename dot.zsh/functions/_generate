@@ -1,9 +1,0 @@
-#compdef _generate generate
-#compdef _generate destroy
-
-_generate () {
-  if [ ! -f .generators ]; then
-    script/generate --help | grep '^  [^ ].*: ' | sed 's/[^:]*:/compadd/' | sed 's/\,//g' > .generators
-  fi
-  `cat .generators`
-}
