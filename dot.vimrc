@@ -16,6 +16,7 @@ Bundle 'vimwiki'
 Bundle 'duskhacker/sweet-rspec-vim'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'h1mesuke/vim-alignta'
+Bundle 'jpo/vim-railscasts-theme'
 Bundle 'kana/vim-textobj-entire'
 Bundle 'kana/vim-textobj-indent'
 Bundle 'kana/vim-textobj-jabraces'
@@ -138,4 +139,4 @@ let g:netrw_altv = 1
 let g:vimwiki_home = '~/vimwiki/'
 let g:CommandTMaxHeight = 20
 
-let g:ctrlp_map = '<Esc>t'
+let g:ctrlp_map = '<M-t>'
