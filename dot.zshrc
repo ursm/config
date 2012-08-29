@@ -33,4 +33,6 @@ plugins=(autojump bundler cap git github gnu-utils heroku knife rails3 rake rben
 
 source $ZSH/oh-my-zsh.sh
 
+unset RUBYOPT
+
 unsetopt correct_all
