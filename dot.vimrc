@@ -1,7 +1,9 @@
 set nocompatible
 filetype off
 
+set runtimepath&
 set runtimepath+=~/.vim/bundle/vundle/
+
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -12,6 +14,7 @@ Bundle 'matchit.zip'
 Bundle 'twilight256.vim'
 Bundle 'vimwiki'
 
+Bundle 'csexton/trailertrash.vim'
 Bundle 'duskhacker/sweet-rspec-vim'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'ervandew/supertab'
@@ -109,34 +112,33 @@ highlight PmenuSel ctermbg=Blue guibg=RoyalBlue
 highlight PmenuSbar ctermbg=LightGray guibg=LightGray
 highlight PmenuThumb ctermbg=White guibg=White
 
-" 挿入モード時、paste オプションを解除する
-autocmd InsertLeave * set nopaste
-
-" 以前開いていたときのカーソル位置を復元する
-autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-" 全角空白と行末の空白の色を変える
-highlight WideSpace ctermbg=blue guibg=blue
-highlight EOLSpace ctermbg=red guibg=red
-
-function! s:HighlightSpaces()
-  syntax match WideSpace /　/ containedin=ALL
-  syntax match EOLSpace /\s\+$/ containedin=ALL
-endf
-
-call s:HighlightSpaces()
-autocmd WinEnter * call s:HighlightSpaces()
-
-" 挿入モード時、ステータスラインの色を変える
-autocmd InsertEnter * highlight StatusLine ctermfg=red
-autocmd InsertLeave * highlight StatusLine ctermfg=white
-
-" 自動的に QuickFix リストを表示する
-autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
-autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
-
+let g:ctrlp_map = '<Esc>t'
 let g:netrw_altv = 1
 let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
-let g:CommandTMaxHeight = 20
 
-let g:ctrlp_map = '<Esc>t'
+augroup MyAutoCmd
+  autocmd!
+
+  " 挿入モード時、paste オプションを解除する
+  autocmd InsertLeave * set nopaste
+
+  " 以前開いていたときのカーソル位置を復元する
+  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+  " 挿入モード時、ステータスラインの色を変える
+  autocmd InsertEnter * highlight StatusLine ctermfg=red
+  autocmd InsertLeave * highlight StatusLine ctermfg=white
+
+  " 自動的に QuickFix リストを表示する
+  autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
+  autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
+
+  if !has('gui_running') && !(has('win32') || has('win64'))
+    " .vimrcの再読込時にも色が変化するようにする
+    autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
+  else
+    " .vimrcの再読込時にも色が変化するようにする
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC | if has('gui_running') | source $MYGVIMRC
+    autocmd BufWritePost $MYGVIMRC if has('gui_running') | source $MYGVIMRC
+  endif
+augroup END

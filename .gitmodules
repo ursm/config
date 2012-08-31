@@ -1,6 +1,3 @@
 [submodule "dot.config/awesome/vicious"]
 	path = dot.config/awesome/vicious
 	url = http://git.sysphere.org/vicious
-[submodule "dot.vim/bundle/vundle"]
-	path = dot.vim/bundle/vundle
-	url = git://github.com/gmarik/vundle.git
