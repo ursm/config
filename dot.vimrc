@@ -6,7 +6,6 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-Bundle 'AutoComplPop'
 Bundle 'EnhCommentify.vim'
 Bundle 'Rename'
 Bundle 'matchit.zip'
@@ -15,6 +14,7 @@ Bundle 'vimwiki'
 
 Bundle 'duskhacker/sweet-rspec-vim'
 Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'ervandew/supertab'
 Bundle 'h1mesuke/vim-alignta'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle 'kana/vim-textobj-entire'
@@ -136,7 +136,7 @@ autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
 autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
 let g:netrw_altv = 1
-let g:vimwiki_home = '~/vimwiki/'
+let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 let g:CommandTMaxHeight = 20
 
-let g:ctrlp_map = '<M-t>'
+let g:ctrlp_map = '<Esc>t'
