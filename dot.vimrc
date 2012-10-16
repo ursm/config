@@ -17,6 +17,7 @@ Bundle 'vimwiki'
 Bundle 'csexton/trailertrash.vim'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'ervandew/supertab'
+Bundle 'glidenote/octoeditor.vim'
 Bundle 'h1mesuke/vim-alignta'
 Bundle 'jpo/vim-railscasts-theme'
 Bundle 'kana/vim-textobj-entire'
@@ -113,6 +114,7 @@ highlight PmenuThumb ctermbg=White guibg=White
 let g:ctrlp_map = '<Esc>t'
 let g:netrw_altv = 1
 let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+let g:octopress_path = '~/src/lab.ursm.jp'
 
 augroup MyAutoCmd
   autocmd!
