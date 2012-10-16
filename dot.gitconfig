@@ -27,3 +27,5 @@
 	default = tracking
 [branch "master"]
 	mergeoptions = --no-ff
+[heroku]
+	account = ursm
