@@ -27,6 +27,7 @@ Bundle 'kana/vim-textobj-user'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kenchan/rubyblue'
 Bundle 'kien/ctrlp.vim'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'pangloss/vim-javascript'
 Bundle 'plasticboy/vim-markdown'
@@ -115,6 +116,8 @@ let g:ctrlp_map = '<Esc>t'
 let g:netrw_altv = 1
 let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 let g:octopress_path = '~/src/lab.ursm.jp'
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
 
 augroup MyAutoCmd
   autocmd!
