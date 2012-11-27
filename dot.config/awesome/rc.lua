@@ -5,9 +5,32 @@ require("awful.rules")
 -- Theme handling library
 require("beautiful")
 -- Notification library
---require("naughty")
+require("naughty")
 
-require("vicious")
+-- {{{ Error handling
+-- Check if awesome encountered an error during startup and fell back to
+-- another config (This code will only ever execute for the fallback config)
+if awesome.startup_errors then
+    naughty.notify({ preset = naughty.config.presets.critical,
+                     title = "Oops, there were errors during startup!",
+                     text = awesome.startup_errors })
+end
+
+-- Handle runtime errors after startup
+do
+    local in_error = false
+    awesome.add_signal("debug::error", function (err)
+        -- Make sure we don't go into an endless error loop
+        if in_error then return end
+        in_error = true
+
+        naughty.notify({ preset = naughty.config.presets.critical,
+                         title = "Oops, an error happened!",
+                         text = err })
+        in_error = false
+    end)
+end
+-- }}}
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
@@ -56,7 +79,7 @@ end
 -- Create a laucher widget and a main menu
 myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
+   { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
    { "quit", awesome.quit }
 }
@@ -71,6 +94,9 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- }}}
 
 -- {{{ Wibox
+-- Create a textclock widget
+mytextclock = awful.widget.textclock({ align = "right" })
+
 -- Create a systray
 mysystray = widget({ type = "systray" })
 
@@ -140,25 +166,6 @@ for s = 1, screen.count() do
 
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
-
-    cpuwidget = widget({ type = "textbox" })
-    vicious.register(cpuwidget, vicious.widgets.cpu, " CPU:$1%", 3)
-
-    memwidget = widget({ type = "textbox" })
-    vicious.register(memwidget, vicious.widgets.mem, " Mem:$1%", 13)
-
-    batwidget = widget({ type = "textbox" })
-    vicious.register(batwidget, vicious.widgets.bat, " Bat:$2%", 61, "BAT0")
-
-    volwidget = widget({ type = "textbox" })
-    vicious.register(volwidget, vicious.widgets.volume, " $2$1", 11, "Master")
-
-    wifiwidget = widget({ type = "textbox" })
-    vicious.register(wifiwidget, vicious.widgets.wifi, " ${ssid} ${mode} ", 17, "wlan0")
-
-    datewidget = widget({ type = "textbox" })
-    vicious.register(datewidget, vicious.widgets.date, " %a %b %d, %H:%M:%S ", 1)
-
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
         {
@@ -168,13 +175,8 @@ for s = 1, screen.count() do
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
-        datewidget,
+        mytextclock,
         s == 1 and mysystray or nil,
-        wifiwidget,
-        volwidget,
-        batwidget,
-        memwidget,
-        cpuwidget,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
@@ -235,14 +237,6 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
-    -- Miscellaneous program, Mod1 is Alt
-    awful.key({ modkey, "Mod1" },    "l",     function () awful.util.spawn("gnome-screensaver-command --lock") end),
-    awful.key({ modkey, "Mod1" },    ";",     function () awful.util.spawn("sudo -n pm-suspend-hybrid") end),
-    awful.key({ modkey, "Mod1" },    "1",     function () awful.util.spawn("xrandr --output LVDS1 --auto --output VGA1 --off  --output HDMI1 --off") end),
-    awful.key({ modkey, "Mod1" },    "2",     function () awful.util.spawn("xrandr --output LVDS1 --off  --output VGA1 --auto --output HDMI1 --off") end),
-    awful.key({ modkey, "Mod1" },    "3",     function () awful.util.spawn("xrandr --output LVDS1 --off  --output VGA1 --off  --output HDMI1 --auto") end),
-    awful.key({ modkey, "Mod1" },    "m",     function () awful.util.spawn("xrandr --output LVDS1 --auto --same-as VGA1 --output VGA1 --auto") end),
-    awful.key({ modkey, "Mod1" },    "d",     function () awful.util.spawn("xrandr --output LVDS1 --auto --left-of VGA1 --output VGA1 --auto") end),
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
     -- Prompt
@@ -378,4 +372,5 @@ client.add_signal("focus", function(c) c.border_color = beautiful.border_focus e
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+awful.util.spawn_with_shell "xcompmgr -n"
 awful.util.spawn_with_shell "dex -a"
