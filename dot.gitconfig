@@ -25,7 +25,5 @@
 	excludesfile = ~/.gitignore
 [push]
 	default = tracking
-[branch "master"]
-	mergeoptions = --no-ff
 [heroku]
 	account = ursm

@@ -5,7 +5,7 @@ require("awful.rules")
 -- Theme handling library
 require("beautiful")
 -- Notification library
-require("naughty")
+--require("naughty")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
