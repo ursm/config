@@ -29,7 +29,7 @@ ZSH_THEME="gentoo"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump bundler cap git github gnu-utils heroku knife rails3 rake rbenv ruby screen thor vundle zeus)
+plugins=(bundler cap git github gnu-utils heroku knife rake rbenv ruby screen thor z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -40,3 +40,5 @@ unsetopt correct_all
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}("
 
 PROMPT=$'%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~)%{$reset_color%} $(git_prompt_info)\n%{$fg_bold[blue]%}$%{$reset_color%} '
+
+eval "$(rbenv init -)"

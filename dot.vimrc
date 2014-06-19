@@ -1,12 +1,10 @@
 set nocompatible
 filetype off
 
-set runtimepath&
-set runtimepath+=~/.vim/bundle/vundle/
+set runtimepath+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 
 Bundle 'EnhCommentify.vim'
 Bundle 'Rename'
@@ -48,8 +46,9 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-ruby/vim-ruby'
 
-filetype plugin indent on
+call vundle#end()
 
+filetype plugin indent on
 syntax enable
 colorscheme twilight256
 
