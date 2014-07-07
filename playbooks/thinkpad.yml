@@ -1,0 +1,5 @@
+- hosts: localhost
+  sudo: yes
+  tasks:
+    - file: path=/etc/X11/xorg.conf.d state=directory
+    - copy: src=files/20-thinkpad.conf dest=/etc/X11/xorg.conf.d
