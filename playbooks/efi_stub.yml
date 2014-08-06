@@ -1,0 +1,4 @@
+- hosts: localhost
+  sudo: yes
+  tasks:
+    - copy: src=files/efi_stub.sh dest=/etc/kernel/postinst.d/efi_stub mode=0755
