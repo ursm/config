@@ -1,9 +1,9 @@
 IRB.conf.update(
-  :SAVE_HISTORY => 10000,
-  :PROMPT_MODE => :SIMPLE
+  SAVE_HISTORY: 10000,
+  PROMPT_MODE:  :SIMPLE
 )
 
-%w(irb/completion pp rubygems what_methods utility_belt).each do |l|
+%w(irb/completion pp what_methods).each do |l|
   begin
     require l
   rescue LoadError
