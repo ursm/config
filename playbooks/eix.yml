@@ -1,0 +1,4 @@
+- hosts: localhost
+  sudo: yes
+  tasks:
+    - copy: src=files/eix-sync.conf dest=/etc/eix-sync.conf mode=0644
