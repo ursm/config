@@ -43,4 +43,8 @@ PROMPT=$'%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%
 
 eval "$(rbenv init -)"
 
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH=$HOME/bin:$HOME/.nodebrew/current/bin:$PATH
+export GOPATH=$HOME
+
+autoload -Uz zmv
+alias zmv='noglob zmv -W'

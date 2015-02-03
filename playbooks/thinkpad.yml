@@ -3,3 +3,4 @@
   tasks:
     - file: path=/etc/X11/xorg.conf.d state=directory
     - copy: src=files/20-thinkpad.conf dest=/etc/X11/xorg.conf.d
+    - copy: src=files/modprobe.d/snd_hda_intel.conf dest=/etc/modprobe.d/snd_hda_intel.conf
