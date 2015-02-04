@@ -13,6 +13,7 @@ Bundle 'matchit.zip'
 Bundle 'twilight256.vim'
 Bundle 'vimwiki'
 
+Bundle 'GutenYe/gem.vim'
 Bundle 'csexton/trailertrash.vim'
 Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'editorconfig/editorconfig-vim'
@@ -115,11 +116,11 @@ highlight PmenuSbar ctermbg=LightGray guibg=LightGray
 highlight PmenuThumb ctermbg=White guibg=White
 
 let g:ctrlp_map = '<Esc>t'
-let g:netrw_altv = 1
-let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
-let g:octopress_path = '~/src/lab.ursm.jp'
-let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+let g:netrw_altv = 1
+let g:netrw_liststyle = 3
+let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 
 augroup MyAutoCmd
   autocmd!
