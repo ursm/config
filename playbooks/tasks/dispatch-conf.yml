@@ -1,0 +1,7 @@
+- portage: package=app-misc/colordiff
+- lineinfile: dest=/etc/dispatch-conf.conf regexp={{item.regexp}} line={{item.line}}
+  with_items:
+    - regexp: ^diff=
+      line:   diff="colordiff -Nu '%s' '%s'"
+    - regexp: ^less-opts=
+      line:   less-opts="--no-init --QUIT-AT-EOF --RAW-CONTROL-CHARS"

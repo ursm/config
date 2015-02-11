@@ -1,0 +1,1 @@
+- sysctl: name=net.ipv6.conf.default.use_tempaddr value=2
