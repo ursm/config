@@ -1,0 +1,4 @@
+- hosts: localhost
+  sudo: no
+  tasks:
+    - include: tasks/home.yml

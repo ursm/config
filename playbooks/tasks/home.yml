@@ -1,0 +1,16 @@
+- git: repo=https://github.com/robbyrussell/oh-my-zsh.git dest=~/.oh-my-zsh
+
+- file: path=~/.vim/bundle state=directory
+- git: repo=https://github.com/gmarik/Vundle.vim.git dest=~/.vim/bundle/Vundle.vim
+
+- copy: src=home/{{item}} dest=~/{{item}}
+  with_items:
+    - .gemrc
+    - .gitconfig
+    - .irbrc
+    - .screenrc
+    - .vimrc
+    - .xprofile
+    - .zshrc
+
+- command: vim +PluginInstall! +qall

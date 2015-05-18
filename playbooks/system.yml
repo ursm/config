@@ -3,9 +3,9 @@
   tasks:
     - include: tasks/dispatch-conf.yml
     - include: tasks/efi_stub.yml
-    - include: tasks/eix.yml
+    #- include: tasks/eix.yml
     - include: tasks/ipv6_privacy_extensions.yml
-    - include: tasks/thinkpad.yml
+    #- include: tasks/thinkpad.yml
 
 - hosts: localhost
   sudo: no

@@ -27,3 +27,5 @@
 	default = tracking
 [heroku]
 	account = ursm
+[ghq]
+	root = /home/ursm/src
