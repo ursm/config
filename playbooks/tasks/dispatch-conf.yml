@@ -4,4 +4,4 @@
     - regexp: ^diff=
       line:   diff="colordiff -Nu '%s' '%s'"
     - regexp: ^less-opts=
-      line:   less-opts="--no-init --QUIT-AT-EOF --RAW-CONTROL-CHARS"
+      line:   less-opts="--no-init --quit-if-one-screen --RAW-CONTROL-CHARS"
