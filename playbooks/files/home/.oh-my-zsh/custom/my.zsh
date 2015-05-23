@@ -6,6 +6,7 @@ export GOPATH=$HOME
 unset RUBYOPT
 
 eval "$(rbenv init -)"
+eval "$(direnv hook zsh)"
 
 autoload -Uz zmv
 alias zmv='noglob zmv -W'
