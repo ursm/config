@@ -2,14 +2,14 @@ source /usr/share/antigen.zsh
 
 antigen use oh-my-zsh
 
-antigen bundle docker
+antigen bundle git
 antigen bundle golang
-antigen bundle npm
 antigen bundle rake-fast
 antigen bundle screen
 antigen bundle sudo
 antigen bundle vundle
 antigen bundle z
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen apply
 
