@@ -1,0 +1,5 @@
+- include: base.yml
+
+- hosts: localhost
+  sudo: yes
+    - include: tasks/thinkpad.yml

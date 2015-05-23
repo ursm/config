@@ -3,14 +3,10 @@
 - file: path=~/.vim/bundle state=directory
 - git: repo=https://github.com/gmarik/Vundle.vim.git dest=~/.vim/bundle/Vundle.vim
 
-- copy: src=home/{{item}} dest=~/{{item}}
-  with_items:
-    - .gemrc
-    - .gitconfig
-    - .irbrc
-    - .screenrc
-    - .vimrc
-    - .xprofile
-    - .zshrc
+- copy: src={{item}} dest=~/
+  with_fileglob:
+    - ../files/home/.*
 
-- command: vim +PluginInstall! +qall
+- copy: src={{item}} dest=~/.oh-my-zsh/custom/
+  with_fileglob:
+    - ../files/home/.oh-my-zsh/custom/*
