@@ -5,7 +5,3 @@ if [ ! -e $HOME/.vim/bundle/Vundle.vim ]; then
 fi
 
 vim -c VundleInstall -c quitall
-
-if [ ! -e $HOME/.nodebrew ]; then
-	curl -L https://git.io/nodebrew | perl - setup
-fi
