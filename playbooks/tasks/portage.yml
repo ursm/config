@@ -1,3 +1,7 @@
+- file: dest=/etc/portage/repos.conf state=directory
+- copy: src={{item}} dest=/etc/portage/repos.conf mode=0644
+  with_fileglob: ../files/repos.conf/*
+
 - portage: package=app-portage/layman
 
 - get_url: dest=/etc/layman/overlays/{{item.key}}.xml mode=0644 url={{item.value}}
