@@ -1,0 +1,2 @@
+- file: path={{ansible_env.HOME}}/src/github.com/esminc state=directory
+- git: repo=git@github.com:esminc/esm-overlay.git dest={{ansible_env.HOME}}/src/github.com/esminc/esm-overlay

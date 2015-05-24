@@ -9,3 +9,8 @@
     - include: tasks/eix.yml
     - include: tasks/ipv6_privacy_extensions.yml
     - include: tasks/portage.yml
+
+- hosts: localhost
+  sudo: no
+  tasks:
+    - include: tasks/esm-overlay.yml
