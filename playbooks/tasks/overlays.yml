@@ -1,0 +1,6 @@
+- portage: package=app-portage/layman
+
+- get_url: dest=/etc/layman/overlays/{{item.key}}.xml mode=0644 url={{item.value}}
+  with_dict: overlays
+- layman: name={{item.key}}
+  with_dict: overlays
