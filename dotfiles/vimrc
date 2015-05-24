@@ -13,42 +13,42 @@ Bundle 'matchit.zip'
 Bundle 'twilight256.vim'
 Bundle 'vimwiki'
 
-Bundle 'GutenYe/gem.vim'
+Bundle 'bkad/CamelCaseMotion'
+Bundle 'coderifous/textobj-word-column.vim'
 Bundle 'csexton/trailertrash.vim'
-Bundle 'ecomba/vim-ruby-refactoring'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'ervandew/supertab'
 Bundle 'h1mesuke/vim-alignta'
-Bundle 'jpo/vim-railscasts-theme'
+Bundle 'kana/vim-textobj-datetime'
 Bundle 'kana/vim-textobj-entire'
 Bundle 'kana/vim-textobj-indent'
 Bundle 'kana/vim-textobj-jabraces'
+Bundle 'kana/vim-textobj-line'
+Bundle 'kana/vim-textobj-underscore'
 Bundle 'kana/vim-textobj-user'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'kenchan/rubyblue'
 Bundle 'kien/ctrlp.vim'
+Bundle 'maxbrunsfeld/vim-yankstack'
+Bundle 'mtsmfm/vim-cursorline-boost'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'pangloss/vim-javascript'
 Bundle 'plasticboy/vim-markdown'
+Bundle 'rhysd/clever-f.vim'
+Bundle 'rhysd/vim-textobj-ruby'
 Bundle 'rking/ag.vim'
 Bundle 'rust-lang/rust.vim'
-Bundle 'skalnik/vim-vroom'
-Bundle 'thinca/vim-ref'
-Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-cucumber'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-sleuth'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
+Bundle 'vim-jp/vim-go-extra'
 Bundle 'vim-ruby/vim-ruby'
 
 call vundle#end()
@@ -69,6 +69,7 @@ set backspace=indent,eol,start
 set cursorline
 set directory-=.
 set display=lastline
+set expandtab tabstop=2 shiftwidth=2
 set hidden
 set ignorecase
 set incsearch
@@ -78,21 +79,19 @@ set listchars=tab:»\
 set mouse=a
 set nobackup
 set nohlsearch
+set nosmartindent
 set number
 set ruler
 set showcmd
 set showmatch
 set showmode
 set smartcase
-set smartindent
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%=%l,%c%v%8p
-set expandtab tabstop=2 shiftwidth=2
 set t_Co=256
 set ttimeoutlen=0
 set virtualedit=block
 set visualbell t_vb=
 set wildmode=list:longest,list:full
-set expandtab tabstop=2 shiftwidth=2
 
 if $SHELL =~ '/fish$'
   set shell=zsh
@@ -117,7 +116,6 @@ highlight PmenuSel ctermbg=Blue guibg=RoyalBlue
 highlight PmenuSbar ctermbg=LightGray guibg=LightGray
 highlight PmenuThumb ctermbg=White guibg=White
 
-let g:ctrlp_map = '<Esc>t'
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 let g:netrw_altv = 1
