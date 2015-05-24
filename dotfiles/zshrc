@@ -7,7 +7,6 @@ antigen bundle golang
 antigen bundle rake-fast
 antigen bundle screen
 antigen bundle sudo
-antigen bundle vundle
 
 antigen bundle mollifier/anyframe
 antigen bundle zsh-users/zsh-syntax-highlighting
