@@ -2,4 +2,5 @@
 
 - hosts: localhost
   sudo: yes
+  tasks:
     - include: tasks/thinkpad.yml
