@@ -1,2 +1,0 @@
-- file: path=~/.config/systemd/user state=directory
-- copy: src=Xvfb.service dest=~/.config/systemd/user/Xvfb.service

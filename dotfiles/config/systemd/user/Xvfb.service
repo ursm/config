@@ -1,0 +1,5 @@
+[Service]
+ExecStart=/usr/bin/Xvfb :99 -ac
+
+[Install]
+WantedBy=default.target
