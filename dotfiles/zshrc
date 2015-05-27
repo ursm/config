@@ -2,7 +2,6 @@ source /usr/share/antigen.zsh
 
 antigen use oh-my-zsh
 
-antigen bundle git
 antigen bundle golang
 antigen bundle rake-fast
 antigen bundle screen
@@ -35,3 +34,6 @@ alias zmv='noglob zmv -W'
 bindkey '^[d' anyframe-widget-cdr
 bindkey '^[g' anyframe-widget-cd-ghq-repository
 bindkey '^[r' anyframe-widget-execute-history
+
+alias be="bundle exec"
+alias g="git"
