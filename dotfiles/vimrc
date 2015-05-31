@@ -33,6 +33,7 @@ Plugin 'maxbrunsfeld/vim-yankstack'
 Plugin 'mtsmfm/vim-cursorline-boost'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
 Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'rhysd/clever-f.vim'
