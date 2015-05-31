@@ -1,4 +1,4 @@
-- include: base.yml
+- include: local.yml
 
 - hosts: localhost
   sudo: yes

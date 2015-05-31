@@ -5,12 +5,4 @@
       bronislav: https://github.com/bronislav/overlays/raw/master/layman.xml
   tasks:
     - include: tasks/dispatch-conf.yml
-    - include: tasks/efi_stub.yml
     - include: tasks/eix.yml
-    - include: tasks/ipv6_privacy_extensions.yml
-    - include: tasks/portage.yml
-
-- hosts: localhost
-  sudo: no
-  tasks:
-    - include: tasks/esm-overlay.yml
