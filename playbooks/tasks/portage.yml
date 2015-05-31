@@ -1,6 +1,5 @@
 - file: dest=/etc/portage/repos.conf state=directory
-- copy: src={{item}} dest=/etc/portage/repos.conf mode=0644
-  with_fileglob: ../files/repos.conf/*
+- copy: src=repos.conf/gentoo.conf dest=/etc/portage/repos.conf mode=0644
 
 - portage: package=app-portage/layman
 
