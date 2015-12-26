@@ -18,7 +18,7 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}("
 setopt hist_ignore_all_dups
 unsetopt correct_all
 
-export PATH=$HOME/bin:$HOME/.nodebrew/current/bin:$PATH
+export PATH=$HOME/bin:$HOME/.nodebrew/current/bin:$HOME/.cargo/bin:$PATH
 export GOPATH=$HOME
 unset RUBYOPT
 
@@ -37,3 +37,6 @@ bindkey '^[r' anyframe-widget-execute-history
 
 alias be="bundle exec"
 alias g="git"
+
+# added by travis gem
+[ -f /home/ursm/.travis/travis.sh ] && source /home/ursm/.travis/travis.sh
