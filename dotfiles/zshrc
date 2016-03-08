@@ -18,11 +18,11 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}("
 setopt hist_ignore_all_dups
 unsetopt correct_all
 
-export PATH=$HOME/bin:$HOME/.nodebrew/current/bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/bin:$HOME/.cargo/bin:$HOME/.anyenv/bin:$PATH
 export GOPATH=$HOME
 unset RUBYOPT
 
-eval "$(rbenv init -)"
+eval "$(anyenv init -)"
 eval "$(direnv hook zsh)"
 
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
