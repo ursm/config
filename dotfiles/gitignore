@@ -1,4 +1,6 @@
 .DS_Store
+.byebug_history
 .envrc
 .gradle
 .rake_tasks
+npm-debug.log
