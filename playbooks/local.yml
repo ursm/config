@@ -13,4 +13,5 @@
 - hosts: localhost
   sudo: no
   tasks:
+    - include: tasks/anyenv.yml
     - include: tasks/esm-overlay.yml

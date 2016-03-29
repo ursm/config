@@ -1,0 +1,1 @@
+- git: repo=git@github.com:riywo/anyenv.git dest={{ansible_env.HOME}}/.anyenv
