@@ -41,3 +41,5 @@
 	helper = gnome-keyring
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[diff]
+	compactionHeuristic = true
