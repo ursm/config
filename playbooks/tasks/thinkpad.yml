@@ -1,3 +1,1 @@
-- file: path=/etc/X11/xorg.conf.d state=directory
-- copy: src=20-thinkpad.conf dest=/etc/X11/xorg.conf.d/20-thinkpad.conf
 - copy: src=snd_hda_intel.conf dest=/etc/modprobe.d/snd_hda_intel.conf

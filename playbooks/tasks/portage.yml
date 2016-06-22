@@ -1,9 +1,12 @@
 - file: dest=/etc/portage/repos.conf state=directory
 - copy: src=repos.conf/gentoo.conf dest=/etc/portage/repos.conf mode=0644
 
+- file: dest=/etc/portage/profile state=directory
+- copy: src=package.use.mask dest=/etc/portage/profile mode=0644
+
 - portage: package=app-portage/layman
 
 - get_url: dest=/etc/layman/overlays/{{item.key}}.xml mode=0644 url={{item.value}}
-  with_dict: overlays
+  with_dict: '{{overlays}}'
 - layman: name={{item.key}} list_url={{item.value}}
-  with_dict: overlays
+  with_dict: '{{overlays}}'

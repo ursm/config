@@ -1,7 +1,7 @@
 - include: base.yml
 
 - hosts: localhost
-  sudo: yes
+  become: yes
   vars:
     overlays:
       bronislav: https://raw.githubusercontent.com/bronislav/overlays/master/layman.xml
@@ -11,7 +11,7 @@
     - include: tasks/portage.yml
 
 - hosts: localhost
-  sudo: no
   tasks:
     - include: tasks/anyenv.yml
     - include: tasks/esm-overlay.yml
+    - include: tasks/vundle.yml

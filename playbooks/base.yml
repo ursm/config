@@ -1,5 +1,5 @@
 - hosts: localhost
-  sudo: yes
+  become: yes
   tasks:
     - include: tasks/dispatch-conf.yml
     - include: tasks/eix.yml

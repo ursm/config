@@ -1,6 +1,6 @@
 - include: local.yml
 
 - hosts: localhost
-  sudo: yes
+  become: yes
   tasks:
     - include: tasks/thinkpad.yml

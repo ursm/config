@@ -2,6 +2,6 @@
 - git: repo=git@github.com:esminc/esm-overlay.git dest={{ansible_env.HOME}}/src/github.com/esminc/esm-overlay
 
 - file: dest=/etc/portage/repos.conf state=directory
-  sudo: yes
+  become: yes
 - copy: src=repos.conf/esm.conf dest=/etc/portage/repos.conf mode=0644
-  sudo: yes
+  become: yes
