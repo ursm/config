@@ -1,2 +1,2 @@
 - file: path={{ansible_env.HOME}}/.vim/bundle state=directory
-- git: repo=https://github.com/gmarik/Vundle.vim.git dest={{ansible_env.HOME}}/.vim/bundle/Vundle.vim
+- git: repo=git://github.com/gmarik/Vundle.vim.git dest={{ansible_env.HOME}}/.vim/bundle/Vundle.vim
