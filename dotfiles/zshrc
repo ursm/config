@@ -22,8 +22,8 @@ export PATH=$HOME/bin:$HOME/.cargo/bin:$HOME/.anyenv/bin:$PATH
 export GOPATH=$HOME
 unset RUBYOPT
 
-eval "$(anyenv init -)"
-eval "$(direnv hook zsh)"
+which anyenv 2>&1 > /dev/null && eval "$(anyenv init -)"
+which direnv 2>&1 > /dev/null && eval "$(direnv hook zsh)"
 
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
