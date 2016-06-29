@@ -7,8 +7,8 @@
       bronislav: https://raw.githubusercontent.com/bronislav/overlays/master/layman.xml
   tasks:
     - include: tasks/efi_stub.yml
-    - include: tasks/ipv6_privacy_extensions.yml
     - include: tasks/portage.yml
+    - include: tasks/use_tempaddr.yml
 
 - hosts: localhost
   tasks:

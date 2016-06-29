@@ -1,1 +1,1 @@
-- copy: src=efi_stub.sh dest=/etc/kernel/postinst.d/efi_stub mode=0755
+- copy: src=postinst.d/efi_stub dest=/etc/kernel/postinst.d/ mode=0755
