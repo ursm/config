@@ -37,6 +37,7 @@ bindkey '^[r' anyframe-widget-execute-history
 
 alias be="bundle exec"
 alias g="git"
+alias o="xdg-open"
 
 # added by travis gem
 [ -f /home/ursm/.travis/travis.sh ] && source /home/ursm/.travis/travis.sh
