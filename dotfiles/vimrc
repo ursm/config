@@ -64,7 +64,7 @@ syntax enable
 colorscheme twilight256
 
 set encoding=utf-8
-set fileencodings=utf-8,cp932,eucjp,iso2022jp,utf-16
+set fileencodings=ucs-bom,utf-8,utf-16,utf-16le,cp932,eucjp,iso2022jp
 set fileformats=unix,dos,mac
 
 set ambiwidth=double
