@@ -19,6 +19,7 @@
 [user]
 	name = Keita Urashima
 	email = ursm@ursm.jp
+	signingkey = 360E323EB0CBCC6E33D8BEEB6A6A5D90F612A885
 [github]
 	user = ursm
 [core]
@@ -46,3 +47,5 @@
 	insteadOf = https://github.com/
 [diff]
 	compactionHeuristic = true
+[gpg]
+	program = gpg2
