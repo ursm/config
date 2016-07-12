@@ -9,9 +9,9 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'EnhCommentify.vim'
 Plugin 'camelcasemotion'
 Plugin 'matchit.zip'
-Plugin 'twilight256.vim'
 Plugin 'vimwiki'
 
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'camthompson/vim-ember'
 Plugin 'coderifous/textobj-word-column.vim'
@@ -61,7 +61,7 @@ call vundle#end()
 
 filetype plugin indent on
 syntax enable
-colorscheme twilight256
+colorscheme solarized
 
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,utf-16,utf-16le,cp932,eucjp,iso2022jp
