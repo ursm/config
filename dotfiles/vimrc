@@ -62,6 +62,9 @@ call vundle#end()
 filetype plugin indent on
 syntax enable
 
+let g:solarized_termcolors = 256
+let g:solarized_termtrans = 1
+set t_Co=256
 set background=dark
 colorscheme solarized
 
@@ -94,7 +97,6 @@ set showmatch
 set showmode
 set smartcase
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%=%l,%c%v%8p
-set t_Co=256
 set ttimeoutlen=0
 set virtualedit=block
 set visualbell t_vb=
