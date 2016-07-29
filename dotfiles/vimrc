@@ -76,6 +76,7 @@ set ambiwidth=double
 set autoindent
 set autoread
 set backspace=indent,eol,start
+set backupdir=~/tmp
 set cursorline
 set directory-=.
 set display=lastline
