@@ -44,3 +44,5 @@
 	compactionHeuristic = true
 [gpg]
 	program = gpg2
+[rebase]
+	autostash = true
