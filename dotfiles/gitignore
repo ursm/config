@@ -4,3 +4,4 @@
 .gradle
 .rake_tasks
 npm-debug.log
+yarn-error.log
