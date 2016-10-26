@@ -15,3 +15,4 @@
     - include: tasks/anyenv.yml
     - include: tasks/esm-overlay.yml
     - include: tasks/vundle.yml
+    - include: tasks/yarn.yml

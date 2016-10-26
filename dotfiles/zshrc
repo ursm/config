@@ -18,7 +18,7 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}("
 setopt hist_ignore_all_dups
 unsetopt correct_all
 
-export PATH=$HOME/bin:$HOME/.cargo/bin:$HOME/.anyenv/bin:$PATH
+export PATH=$HOME/bin:$HOME/.anyenv/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$PATH
 export GOPATH=$HOME
 unset RUBYOPT
 
@@ -35,9 +35,9 @@ bindkey '^[d' anyframe-widget-cdr
 bindkey '^[g' anyframe-widget-cd-ghq-repository
 bindkey '^[r' anyframe-widget-execute-history
 
-alias be="bundle exec"
-alias g="git"
-alias o="xdg-open"
+alias be='bundle exec'
+alias g='git'
+alias o='xdg-open'
 
 # added by travis gem
 [ -f /home/ursm/.travis/travis.sh ] && source /home/ursm/.travis/travis.sh
