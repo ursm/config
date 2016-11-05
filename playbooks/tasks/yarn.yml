@@ -1,2 +1,2 @@
 - file: path={{ansible_env.HOME}}/.yarn state=directory
-- unarchive: src=https://yarnpkg.com/latest.tar.gz dest={{ansible_env.HOME}}/.yarn remote_src=yes
+- unarchive: src=https://yarnpkg.com/latest.tar.gz dest={{ansible_env.HOME}}/.yarn remote_src=yes extra_opts='--strip-components=1' creates={{ansible_env.HOME}}/.yarn/bin/yarn
