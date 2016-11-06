@@ -6,5 +6,5 @@
     overlays:
       bronislav: https://raw.githubusercontent.com/bronislav/overlays/master/layman.xml
       esm:       https://raw.githubusercontent.com/esminc/esm-overlay/master/profiles/layman.xml
-  tasks:
-    - include: tasks/portage.yml
+  roles:
+    - portage

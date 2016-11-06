@@ -1,0 +1,1 @@
+- copy: src=efi_stub dest=/etc/kernel/postinst.d/ mode=0755

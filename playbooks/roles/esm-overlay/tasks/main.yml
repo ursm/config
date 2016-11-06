@@ -3,5 +3,5 @@
 
 - file: dest=/etc/portage/repos.conf state=directory
   become: yes
-- copy: src=repos.conf/esm.conf dest=/etc/portage/repos.conf mode=0644
+- template: src=esm.conf.j2 dest=/etc/portage/repos.conf/esm.conf mode=0644
   become: yes

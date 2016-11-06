@@ -1,1 +1,0 @@
-- copy: src=snd_hda_intel.conf dest=/etc/modprobe.d/snd_hda_intel.conf

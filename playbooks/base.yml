@@ -1,6 +1,6 @@
 - hosts: localhost
   become: yes
-  tasks:
-    - include: tasks/dispatch-conf.yml
-    - include: tasks/eix.yml
-    - include: tasks/tcp_fastopen.yml
+  roles:
+    - dispatch-conf
+    - eix
+    - tcp_fastopen

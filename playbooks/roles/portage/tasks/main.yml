@@ -1,8 +1,8 @@
 - file: dest=/etc/portage/repos.conf state=directory
-- copy: src=repos.conf/gentoo.conf dest=/etc/portage/repos.conf mode=0644
+- copy: src=gentoo.conf dest=/etc/portage/repos.conf/ mode=0644
 
 - file: dest=/etc/portage/profile state=directory
-- copy: src=package.use.mask dest=/etc/portage/profile mode=0644
+- copy: src=package.use.mask dest=/etc/portage/profile/ mode=0644
 
 - portage: package=app-portage/layman
 

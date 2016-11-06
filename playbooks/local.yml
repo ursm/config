@@ -5,15 +5,15 @@
   vars:
     overlays:
       bronislav: https://raw.githubusercontent.com/bronislav/overlays/master/layman.xml
-  tasks:
-    - include: tasks/efi_stub.yml
-    - include: tasks/portage.yml
-    - include: tasks/use_tempaddr.yml
+  roles:
+    - efi_stub
+    - portage
+    - use_tempaddr
 
 - hosts: localhost
-  tasks:
-    - include: tasks/anyenv.yml
-    - include: tasks/esm-overlay.yml
-    - include: tasks/google-cloud-sdk.yml
-    - include: tasks/vundle.yml
-    - include: tasks/yarn.yml
+  roles:
+    - anyenv
+    - esm-overlay
+    - google-cloud-sdk
+    - vundle
+    - yarn
