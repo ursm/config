@@ -37,7 +37,10 @@ bindkey '^[r' anyframe-widget-execute-history
 
 alias be='bundle exec'
 alias g='git'
-alias o='xdg-open'
+alias open='xdg-open'
 
-# added by travis gem
-[ -f /home/ursm/.travis/travis.sh ] && source /home/ursm/.travis/travis.sh
+for i in path completion; do
+  [ -f $HOME/.google-cloud-sdk/${i}.zsh.inc ] && source $HOME/.google-cloud-sdk/${i}.zsh.inc
+done
+
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh

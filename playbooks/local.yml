@@ -14,5 +14,6 @@
   tasks:
     - include: tasks/anyenv.yml
     - include: tasks/esm-overlay.yml
+    - include: tasks/google-cloud-sdk.yml
     - include: tasks/vundle.yml
     - include: tasks/yarn.yml
