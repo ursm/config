@@ -15,5 +15,6 @@
     - anyenv
     - esm-overlay
     - google-cloud-sdk
+    - heroku-client
     - vundle
     - yarn

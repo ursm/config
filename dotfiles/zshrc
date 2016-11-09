@@ -18,7 +18,7 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}("
 setopt hist_ignore_all_dups
 unsetopt correct_all
 
-export PATH=$HOME/bin:$HOME/.anyenv/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/bin:$HOME/.anyenv/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/.heroku-client/bin:$PATH
 export GOPATH=$HOME
 unset RUBYOPT
 
@@ -39,8 +39,6 @@ alias be='bundle exec'
 alias g='git'
 alias open='xdg-open'
 
-for i in path completion; do
-  [ -f $HOME/.google-cloud-sdk/${i}.zsh.inc ] && source $HOME/.google-cloud-sdk/${i}.zsh.inc
+for i in .google-cloud-sdk/{path,completion}.zsh.inc .local/bin/eb_completion.bash .travis/travis.sh; do
+  [ -f $HOME/$i ] && source $HOME/$i
 done
-
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
