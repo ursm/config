@@ -1,7 +1,7 @@
 - include: base.yml
 
 - hosts: localhost
-  become: yes
+  become: true
   vars:
     overlays:
       bronislav: https://raw.githubusercontent.com/bronislav/overlays/master/layman.xml

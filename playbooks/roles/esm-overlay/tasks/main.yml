@@ -4,4 +4,4 @@
 - block:
   - file: dest=/etc/portage/repos.conf state=directory
   - template: src=esm.conf.j2 dest=/etc/portage/repos.conf/esm.conf mode=0644
-  become: yes
+  become: true
