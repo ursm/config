@@ -1,7 +1,7 @@
 - file: path={{ansible_env.HOME}}/src/github.com/esminc state=directory
 - git: repo=https://github.com/esminc/esm-overlay.git dest={{ansible_env.HOME}}/src/github.com/esminc/esm-overlay
 
-- file: dest=/etc/portage/repos.conf state=directory
-  become: yes
-- template: src=esm.conf.j2 dest=/etc/portage/repos.conf/esm.conf mode=0644
+- block:
+  - file: dest=/etc/portage/repos.conf state=directory
+  - template: src=esm.conf.j2 dest=/etc/portage/repos.conf/esm.conf mode=0644
   become: yes
