@@ -1,2 +1,7 @@
 - file: path={{ansible_env.HOME}}/.heroku-client state=directory
-- unarchive: src=https://s3.amazonaws.com/assets.heroku.com/heroku-client/heroku-client.tgz dest={{ansible_env.HOME}}/.heroku-client/ remote_src=yes extra_opts='--strip-components=1' creates={{ansible_env.HOME}}/.heroku-client/bin/heroku
+- unarchive: >
+    src=https://s3.amazonaws.com/assets.heroku.com/heroku-client/heroku-client.tgz
+    dest={{ansible_env.HOME}}/.heroku-client/
+    remote_src=yes
+    extra_opts=--strip-components=1
+    creates={{ansible_env.HOME}}/.heroku-client/bin/heroku

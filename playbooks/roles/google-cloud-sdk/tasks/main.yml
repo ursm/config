@@ -1,3 +1,10 @@
 - file: path={{ansible_env.HOME}}/.google-cloud-sdk state=directory
-- unarchive: src=https://dl.google.com/dl/cloudsdk/channels/rapid/google-cloud-sdk.tar.gz dest={{ansible_env.HOME}}/.google-cloud-sdk/ remote_src=yes extra_opts='--strip-components=1' creates={{ansible_env.HOME}}/.google-cloud-sdk/install.sh
-- command: '{{ansible_env.HOME}}/.google-cloud-sdk/install.sh --quiet --command-completion=false --path=update=false --additional-components=beta creates={{ansible_env.HOME}}/.google-cloud-sdk/bin/gcloud'
+- unarchive: >
+    src=https://dl.google.com/dl/cloudsdk/channels/rapid/google-cloud-sdk.tar.gz
+    dest={{ansible_env.HOME}}/.google-cloud-sdk/
+    remote_src=yes
+    extra_opts=--strip-components=1
+    creates={{ansible_env.HOME}}/.google-cloud-sdk/install.sh
+- command: >
+    {{ansible_env.HOME}}/.google-cloud-sdk/install.sh --quiet --command-completion=false --path=update=false --additional-components=beta
+    creates={{ansible_env.HOME}}/.google-cloud-sdk/bin/gcloud
