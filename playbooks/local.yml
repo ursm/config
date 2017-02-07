@@ -7,6 +7,7 @@
       bronislav: https://raw.githubusercontent.com/bronislav/overlays/master/layman.xml
   roles:
     - efi_stub
+    - max_user_watches
     - portage
     - use_tempaddr
 
