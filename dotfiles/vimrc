@@ -126,13 +126,14 @@ highlight PmenuSel ctermbg=Blue guibg=RoyalBlue
 highlight PmenuSbar ctermbg=LightGray guibg=LightGray
 highlight PmenuThumb ctermbg=White guibg=White
 
+let g:go_fmt_command = 'goimports'
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 let g:jsx_ext_required = 0
 let g:netrw_altv = 1
 let g:netrw_liststyle = 3
-let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 let g:syntastic_javascript_checkers = ['eslint']
+let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 
 augroup MyAutoCmd
   autocmd!
