@@ -8,6 +8,7 @@
   roles:
     - efi_stub
     - max_user_watches
+    - nss-mdns
     - portage
     - use_tempaddr
 
