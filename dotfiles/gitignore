@@ -1,7 +1,10 @@
 .DS_Store
+._*.svg
+._.DS_Store
 .byebug_history
 .envrc
 .gradle
 .rake_tasks
+.ruby-version
 npm-debug.log
 yarn-error.log
