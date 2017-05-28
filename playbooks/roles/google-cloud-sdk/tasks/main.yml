@@ -6,5 +6,5 @@
     extra_opts=--strip-components=1
     creates={{ansible_env.HOME}}/.google-cloud-sdk/install.sh
 - command: >
-    {{ansible_env.HOME}}/.google-cloud-sdk/install.sh --quiet --command-completion=false --path=update=false --additional-components=beta
+    {{ansible_env.HOME}}/.google-cloud-sdk/install.sh --quiet --command-completion=false --path-update=false --additional-components=beta
     creates={{ansible_env.HOME}}/.google-cloud-sdk/bin/gcloud
