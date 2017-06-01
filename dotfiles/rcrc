@@ -1,1 +1,2 @@
 DOTFILES_DIRS="$HOME/src/github.com/ursm/config/dotfiles"
+UNDOTTED="bin"
