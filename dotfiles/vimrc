@@ -109,8 +109,6 @@ if $SHELL =~ '/fish$'
   set shell=zsh
 endif
 
-noremap ; :
-noremap : ;
 noremap <silent> j gj
 noremap <silent> k gk
 noremap <silent> gj j

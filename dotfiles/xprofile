@@ -1,1 +1,1 @@
-xcape -e 'Caps_Lock=Escape;Alt_L=Muhenkan;Alt_R=Henkan'
+xcape -e 'Control_L=Escape;Alt_L=Muhenkan;Alt_R=Henkan;Shift_L=Shift_L|bracketleft;Shift_R=Shift_R|bracketright'

@@ -26,6 +26,7 @@
 	excludesfile = ~/.gitignore
 [push]
 	default = tracking
+	followTags = true
 [heroku]
 	account = ursm
 [ghq]
