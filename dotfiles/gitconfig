@@ -42,7 +42,7 @@
 [credential]
 	helper = libsecret
 [diff]
-	compactionHeuristic = true
+	algorithm = histogram
 [gpg]
 	program = gpg2
 [rebase]
