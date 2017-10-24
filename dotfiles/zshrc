@@ -18,7 +18,7 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}("
 setopt hist_ignore_all_dups
 unsetopt correct_all
 
-export PATH=$HOME/bin:$HOME/.anyenv/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/.heroku-client/bin:$PATH
+export PATH=$HOME/bin:$HOME/.anyenv/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/.heroku-cli/bin:$PATH
 export GOPATH=$HOME
 unset RUBYOPT
 
