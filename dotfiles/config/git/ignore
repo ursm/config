@@ -4,6 +4,7 @@
 .byebug_history
 .envrc
 .gradle
+.node-version
 .rake_tasks
 .ruby-version
 npm-debug.log

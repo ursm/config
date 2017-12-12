@@ -39,8 +39,6 @@
 	required = true
 [credential]
 	helper = libsecret
-[diff]
-	algorithm = histogram
 [gpg]
 	program = gpg2
 [rebase]

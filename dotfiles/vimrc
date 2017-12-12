@@ -6,55 +6,28 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'camelcasemotion'
-Plugin 'matchit.zip'
-Plugin 'vimwiki'
-
+Plugin 'airblade/vim-rooter'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'bkad/CamelCaseMotion'
-Plugin 'camthompson/vim-ember'
-Plugin 'coderifous/textobj-word-column.vim'
 Plugin 'csexton/trailertrash.vim'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'elixir-lang/vim-elixir'
 Plugin 'ervandew/supertab'
-Plugin 'fatih/vim-go'
 Plugin 'h1mesuke/vim-alignta'
-Plugin 'kana/vim-textobj-datetime'
-Plugin 'kana/vim-textobj-entire'
 Plugin 'kana/vim-textobj-indent'
-Plugin 'kana/vim-textobj-jabraces'
-Plugin 'kana/vim-textobj-line'
-Plugin 'kana/vim-textobj-underscore'
 Plugin 'kana/vim-textobj-user'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'leafgarland/typescript-vim'
 Plugin 'machakann/vim-swap'
-Plugin 'mtsmfm/vim-cursorline-boost'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'mxw/vim-jsx'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'pangloss/vim-javascript'
-Plugin 'plasticboy/vim-markdown'
 Plugin 'rhysd/vim-textobj-ruby'
 Plugin 'rking/ag.vim'
-Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'thoughtbot/vim-rspec'
+Plugin 'sheerun/vim-polyglot'
 Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-haml'
-Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-rake'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-sleuth'
-Plugin 'tpope/vim-speeddating'
 Plugin 'tpope/vim-surround'
-Plugin 'vim-ruby/vim-ruby'
 
 call vundle#end()
 
@@ -63,7 +36,6 @@ syntax enable
 
 let g:solarized_termcolors = 256
 let g:solarized_termtrans = 1
-set t_Co=256
 set background=dark
 colorscheme solarized
 
@@ -72,7 +44,6 @@ set fileencodings=ucs-bom,utf-8,utf-16,utf-16le,cp932,eucjp,iso2022jp
 set fileformats=unix,dos,mac
 
 set ambiwidth=double
-set autoindent
 set autoread
 set backspace=indent,eol,start
 set backupdir=~/tmp
@@ -80,7 +51,6 @@ set breakindent
 set cursorline
 set directory-=.
 set display=lastline
-set expandtab tabstop=2 shiftwidth=2
 set hidden
 set ignorecase
 set incsearch
@@ -88,25 +58,19 @@ set laststatus=2
 set lazyredraw
 set list
 set listchars=tab:»\ 
+set matchtime=1
 set mouse=a
 set nobackup
-set nohlsearch
-set nosmartindent
 set number
-set ruler
 set showcmd
 set showmatch
 set showmode
 set smartcase
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%=%l,%c%v%8p
+set smartindent
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y%=%l,%c
 set ttimeoutlen=0
 set virtualedit=block
-set visualbell t_vb=
 set wildmode=list:longest,list:full
-
-if $SHELL =~ '/fish$'
-  set shell=zsh
-endif
 
 noremap <silent> j gj
 noremap <silent> k gk
@@ -120,44 +84,28 @@ cnoremap <C-a> <Home>
 cnoremap <C-x> <C-r>=expand('%:p:h')<CR>/
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 
-highlight Pmenu ctermbg=LightGray ctermfg=Black guibg=LightGray guifg=Black
-highlight PmenuSel ctermbg=Blue guibg=RoyalBlue
-highlight PmenuSbar ctermbg=LightGray guibg=LightGray
-highlight PmenuThumb ctermbg=White guibg=White
-
 let g:go_fmt_command = 'goimports'
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 let g:jsx_ext_required = 0
 let g:netrw_altv = 1
 let g:netrw_liststyle = 3
+let g:rooter_patterns = ['.git/', 'Gemfile', 'package.json']
+let g:rooter_silent_chdir = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_ruby_mri_args = '-W1'
 let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 
-augroup MyAutoCmd
+augroup vimrc
   autocmd!
 
-  " 挿入モード時、paste オプションを解除する
-  autocmd InsertLeave * set nopaste
-
-  " 以前開いていたときのカーソル位置を復元する
-  autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-  " 挿入モード時、ステータスラインの色を変える
-  autocmd InsertEnter * highlight StatusLine ctermfg=red
-  autocmd InsertLeave * highlight StatusLine ctermfg=white
-
-  " 自動的に QuickFix リストを表示する
   autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
   autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
-  if !has('gui_running') && !(has('win32') || has('win64'))
-    " .vimrcの再読込時にも色が変化するようにする
-    autocmd BufWritePost $MYVIMRC nested source $MYVIMRC
-  else
-    " .vimrcの再読込時にも色が変化するようにする
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC | if has('gui_running') | source $MYGVIMRC
-    autocmd BufWritePost $MYGVIMRC if has('gui_running') | source $MYGVIMRC
-  endif
+  autocmd FileType * setlocal formatoptions-=r formatoptions-=r
+
+  autocmd FileType html.handlebars
+        \ let b:endwise_addition = '{{/&}}' |
+        \ let b:endwise_words = 'if,unless,with,each' |
+        \ let b:endwise_syngroups = 'mustacheConditionals,mustacheHelpers'
 augroup END
