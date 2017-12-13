@@ -1,4 +1,4 @@
-- include: base.yml
+- import_playbook: base.yml
 
 - hosts: localhost
   become: true

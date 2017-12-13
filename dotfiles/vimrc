@@ -1,92 +1,55 @@
-set nocompatible
-filetype off
+source $VIMRUNTIME/defaults.vim
 
-set runtimepath+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 
-Plugin 'gmarik/Vundle.vim'
+Plug 'airblade/vim-rooter'
+Plug 'csexton/trailertrash.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'ervandew/supertab'
+Plug 'h1mesuke/vim-alignta'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-user'
+Plug 'machakann/vim-swap'
+Plug 'morhetz/gruvbox'
+Plug 'rhysd/vim-textobj-ruby'
+Plug 'rking/ag.vim'
+Plug 'scrooloose/syntastic'
+Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
 
-Plugin 'airblade/vim-rooter'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'csexton/trailertrash.vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'ervandew/supertab'
-Plugin 'h1mesuke/vim-alignta'
-Plugin 'kana/vim-textobj-indent'
-Plugin 'kana/vim-textobj-user'
-Plugin 'machakann/vim-swap'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'rhysd/vim-textobj-ruby'
-Plugin 'rking/ag.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-sleuth'
-Plugin 'tpope/vim-surround'
+call plug#end()
 
-call vundle#end()
-
-filetype plugin indent on
-syntax enable
-
-let g:solarized_termcolors = 256
-let g:solarized_termtrans = 1
-set background=dark
-colorscheme solarized
-
-set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,utf-16,utf-16le,cp932,eucjp,iso2022jp
 set fileformats=unix,dos,mac
 
 set ambiwidth=double
-set autoread
-set backspace=indent,eol,start
-set backupdir=~/tmp
+set background=dark
 set breakindent
 set cursorline
-set directory-=.
-set display=lastline
 set hidden
-set ignorecase
-set incsearch
-set laststatus=2
 set lazyredraw
 set list
-set listchars=tab:»\ 
 set matchtime=1
-set mouse=a
-set nobackup
 set number
-set showcmd
 set showmatch
-set showmode
-set smartcase
-set smartindent
-set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).':'.&ff.']'}%y%=%l,%c
-set ttimeoutlen=0
+set termguicolors
 set virtualedit=block
 set wildmode=list:longest,list:full
 
-noremap <silent> j gj
-noremap <silent> k gk
-noremap <silent> gj j
-noremap <silent> gk k
-
-nnoremap + <C-w>+
-nnoremap - <C-w>-
-
-cnoremap <C-a> <Home>
-cnoremap <C-x> <C-r>=expand('%:p:h')<CR>/
-cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 let g:go_fmt_command = 'goimports'
-let g:indent_guides_guide_size = 1
-let g:indent_guides_start_level = 2
+let g:gruvbox_italic = 1
 let g:jsx_ext_required = 0
 let g:netrw_altv = 1
 let g:netrw_liststyle = 3
@@ -94,7 +57,10 @@ let g:rooter_patterns = ['.git/', 'Gemfile', 'package.json']
 let g:rooter_silent_chdir = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_ruby_mri_args = '-W1'
-let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+
+colorscheme gruvbox
+
+cnoremap <C-x> <C-r>=expand('%:p:h')<CR>/
 
 augroup vimrc
   autocmd!

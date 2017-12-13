@@ -1,4 +1,4 @@
-- include: base.yml
+- import_playbook: base.yml
 
 - hosts: localhost
   become: true
@@ -15,5 +15,5 @@
     - esm-overlay
     - google-cloud-sdk
     - heroku-client
-    - vundle
+    - vim-plug
     - yarn
