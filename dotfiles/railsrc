@@ -1,0 +1,6 @@
+--database=postgresql
+--skip-bootsnap
+--skip-bundle
+--skip-coffee
+--skip-spring
+--skip-test

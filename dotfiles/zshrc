@@ -1,3 +1,4 @@
+source /etc/profile.d/vte-*.sh
 source /usr/share/antigen.zsh
 
 antigen use oh-my-zsh
@@ -38,6 +39,7 @@ bindkey '^[r' anyframe-widget-execute-history
 alias be='bundle exec'
 alias g='git'
 alias open='xdg-open'
+alias dc='docker-compose'
 
 for i in .google-cloud-sdk/{path,completion}.zsh.inc .local/bin/eb_completion.bash .travis/travis.sh; do
   [ -f $HOME/$i ] && source $HOME/$i

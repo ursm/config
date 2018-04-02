@@ -1,11 +1,13 @@
+*.retry
+*.sw[a-p]
+*~
 .DS_Store
-._*.svg
-._.DS_Store
+._*
 .byebug_history
 .envrc
 .gradle
+.netrwhist
 .node-version
-.rake_tasks
 .ruby-version
 npm-debug.log
 yarn-error.log

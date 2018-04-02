@@ -43,3 +43,4 @@
 	program = gpg2
 [rebase]
 	autostash = true
+	autosquash = true

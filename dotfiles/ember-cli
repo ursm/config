@@ -1,0 +1,6 @@
+{
+  "skip-bower": true,
+  "skip-npm": true,
+  "welcome": false,
+  "yarn": true
+}

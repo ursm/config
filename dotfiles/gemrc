@@ -1,2 +1,2 @@
-gem: --no-rdoc --no-ri --verbose
+gem: --no-document --verbose
 gemsrc_clone_root: ~/src
