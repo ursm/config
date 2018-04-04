@@ -46,6 +46,11 @@ set termguicolors
 set virtualedit=block
 set wildmode=list:longest,list:full
 
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --no-heading
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
+
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
@@ -55,7 +60,6 @@ let g:jsx_ext_required = 0
 let g:netrw_altv = 1
 let g:netrw_liststyle = 3
 let g:rooter_patterns = ['ember-cli-build.js', '.git', '.git/']
-let g:rooter_silent_chdir = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_ruby_mri_args = '-W1'
 
@@ -70,9 +74,4 @@ augroup vimrc
   autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
   autocmd FileType * setlocal formatoptions-=r formatoptions-=r
-
-  autocmd FileType html.handlebars
-        \ let b:endwise_addition = '{{/&}}' |
-        \ let b:endwise_words = 'if,unless,with,each' |
-        \ let b:endwise_syngroups = 'mustacheConditionals,mustacheHelpers'
 augroup END
