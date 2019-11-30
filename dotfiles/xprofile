@@ -1,3 +1,0 @@
-export ANDROID_EMULATOR_USE_SYSTEM_LIBS=1
-
-xcape -e 'Control_L=Escape;Alt_L=Muhenkan;Alt_R=Henkan'

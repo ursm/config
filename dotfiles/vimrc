@@ -2,22 +2,23 @@ source $VIMRUNTIME/defaults.vim
 
 call plug#begin()
 
-Plug 'airblade/vim-rooter'
-Plug 'camthompson/vim-ember'
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'adelarsq/vim-matchit'
+Plug 'airblade/vim-gitgutter'
 Plug 'csexton/trailertrash.vim'
+Plug 'docunext/closetag.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
-Plug 'h1mesuke/vim-alignta'
-Plug 'joukevandermaas/vim-ember-hbs'
-Plug 'junegunn/fzf.vim'
+Plug 'fatih/vim-go'
+Plug 'junegunn/vim-easy-align'
 Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-user'
+Plug 'luochen1990/rainbow'
 Plug 'machakann/vim-swap'
 Plug 'morhetz/gruvbox'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rhysd/vim-textobj-ruby'
-Plug 'sukima/vim-ember-imports'
-Plug 'sukima/vim-emberlayout'
-Plug 'tpope/vim-bundler'
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
@@ -30,17 +31,11 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 
-" too slow
-"Plug 'scrooloose/syntastic'
-" conflicts with vim-ember-hbs
-"Plug 'sheerun/vim-polyglot'
-
 call plug#end()
 
 set fileencodings=ucs-bom,utf-8,utf-16,utf-16le,cp932,eucjp,iso2022jp
 set fileformats=unix,dos,mac
 
-set ambiwidth=double
 set background=dark
 set breakindent
 set cursorline
@@ -48,9 +43,11 @@ set hidden
 set lazyredraw
 set list
 set matchtime=1
+set modeline
 set number
 set showmatch
 set termguicolors
+set tabstop=4
 set virtualedit=block
 set wildmode=list:longest,list:full
 
@@ -64,24 +61,46 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 let g:go_fmt_command = 'goimports'
 let g:gruvbox_italic = 1
-let g:jsx_ext_required = 0
 let g:netrw_altv = 1
 let g:netrw_liststyle = 3
-let g:polyglot_disabled = ['handlebars']
-let g:rooter_patterns = ['ember-cli-build.js', '.git', '.git/']
-let g:rooter_silent_chdir = 1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_ruby_mri_args = '-W1'
+
+let g:terminal_ansi_colors = [
+  \ '#073642',
+  \ '#dc322f',
+  \ '#859900',
+  \ '#b58900',
+  \ '#268bd2',
+  \ '#d33682',
+  \ '#2aa198',
+  \ '#eee8d5',
+  \ '#002b36',
+  \ '#cb4b16',
+  \ '#586e75',
+  \ '#657b83',
+  \ '#839496',
+  \ '#6c71c4',
+  \ '#93a1a1',
+  \ '#fdf6e3',
+  \ ]
+
+let g:coc_global_extensions = [
+  \ 'coc-css',
+  \ 'coc-ember',
+  \ 'coc-html',
+  \ 'coc-json',
+  \ 'coc-solargraph',
+  \ 'coc-tsserver',
+  \ 'coc-yaml',
+  \ ]
 
 colorscheme gruvbox
 
-nmap <C-p> :Files<CR>
 cmap <C-x> <C-r>=expand('%:p:h')<CR>/
 
 augroup vimrc
   autocmd!
 
-  autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
+  autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd,Ggrep cwin
   autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
   autocmd FileType * setlocal formatoptions-=r formatoptions-=r

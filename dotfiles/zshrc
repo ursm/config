@@ -1,46 +1,56 @@
 source /etc/profile.d/vte-*.sh
-source /usr/share/antigen.zsh
+source ~/.antigen/antigen.zsh
 
 antigen use oh-my-zsh
 
-antigen bundle golang
-antigen bundle rake-fast
-antigen bundle screen
-antigen bundle sudo
-
 antigen bundle mollifier/anyframe
+antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 antigen apply
 
+setopt prompt_subst
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_no_store
+setopt share_history
+setopt extended_history
+setopt extended_glob
+
+autoload -Uz colors && colors
+autoload -Uz compinit && compinit
+autoload -Uz bashcompinit && bashcompinit
+autoload -Uz vcs_info
+autoload -Uz zmv
+
 PROMPT=$'%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~)%{$reset_color%} $(git_prompt_info)\n%{$fg_bold[blue]%}$%{$reset_color%} '
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}("
 
-setopt hist_ignore_all_dups
-unsetopt correct_all
+export PATH=$HOME/bin:$HOME/go/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$HOME/.local/bin:$PATH:$HOME/.heroku/bin
 
-export PATH=$HOME/bin:$HOME/.anyenv/bin:$HOME/.yarn/bin:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/.heroku-cli/bin:$PATH
-export GOPATH=$HOME
-unset RUBYOPT
+export GO111MODULE=on
+export GOPATH=$HOME/go:$HOME
+export RUBY_CFLAGS='-O3 -pipe -march=native'
+export RUBY_MAKE_OPTS='-j4 -l4'
+export UNZIP='-O cp932'
 
-which anyenv 2>&1 > /dev/null && eval "$(anyenv init -)"
-which direnv 2>&1 > /dev/null && eval "$(direnv hook zsh)"
+source $HOME/.asdf/asdf.sh
+source $HOME/.asdf/completions/asdf.bash
 
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-add-zsh-hook chpwd chpwd_recent_dirs
+for i in ~/.cache/heroku/autocomplete/zsh_setup ~/.google-cloud-sdk/{path,completion}.zsh.inc ~/.travis/travis.sh; do
+  [ -f $i ] && source $i
+done
 
-autoload -Uz zmv
-alias zmv='noglob zmv -W'
-
-bindkey '^[d' anyframe-widget-cdr
-bindkey '^[g' anyframe-widget-cd-ghq-repository
-bindkey '^[r' anyframe-widget-execute-history
+eval "$(direnv hook zsh)"
 
 alias be='bundle exec'
+alias bo='bundle open'
+alias dc='docker-compose'
 alias g='git'
 alias open='xdg-open'
-alias dc='docker-compose'
+alias pwgen='pwgen --secure --num-passwords=1'
+#alias vim='code'
+alias yr='yarn run'
 
-for i in .google-cloud-sdk/{path,completion}.zsh.inc .local/bin/eb_completion.bash .travis/travis.sh; do
-  [ -f $HOME/$i ] && source $HOME/$i
-done
+bindkey '^g' anyframe-widget-cd-ghq-repository
+bindkey '^r' history-incremental-search-backward

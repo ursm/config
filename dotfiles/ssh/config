@@ -1,0 +1,7 @@
+Include local_config
+
+#Host *
+#  ControlMaster auto
+#  ControlPath ~/.cache/ssh/control/%C
+#  ControlPersist 10
+#  ServerAliveInterval 60

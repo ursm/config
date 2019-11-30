@@ -6,8 +6,10 @@
 .byebug_history
 .envrc
 .gradle
+.netlify/
 .netrwhist
 .node-version
 .ruby-version
+.tool-versions
 npm-debug.log
 yarn-error.log
